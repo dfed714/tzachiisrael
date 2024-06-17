@@ -1,0 +1,35 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/kate 1/Desktop/Web Layout - landing page - indd/Document fonts/AdobeFnt22.lst
+FileLength:676
+FileModTime:731546409
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:NunitoSans-12ptExtraLight
+FamilyName:Nunito Sans
+StyleName:12pt ExtraLight
+MenuName:Nunito Sans 12pt ExtraLight
+FamilyPrefix:NunitoSans
+StyleBits:0
+WeightClass:200
+WidthClass:5
+AngleClass:0
+FullName:Nunito Sans 12pt ExtraLight
+WritingScript:Roman
+OutlineFileName:/Users/kate 1/Desktop/Web Layout - landing page - indd/Document fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:TrueTypeVariableFont
+FileLength:569372
+FileModTime:704319502
+NameArray:0,Win,1,Nunito Sans 12pt ExtraLight
+NameArray:0,Win,16,Nunito Sans
+%EndFont
+

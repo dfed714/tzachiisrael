@@ -1,0 +1,77 @@
+:root {
+    --clr-gold: #c8a25f;
+    --clr-darkgold: #997024;
+    --clr-beige: #d6b18b;
+    --clr-green: #7d9238;
+    --clr-darkgreen: #595e29;
+    --clr-navy: #2e4066;
+    --clr-lightblue: #bfdaec;
+    --clr-brown: #b06633;
+    --clr-black: #353535;
+    --clr-white: white;
+    --clr-input: #a0a7b7;
+  
+    --spacer: calc(((75 / 1920) * 100vw));
+    --spacer-175: calc((175 / 1920) * 100vw);
+    --fs-title: calc((36 / 1920) * 100vw);
+    --fs-normal: calc((24 / 1920) * 100vw);
+    --fs-small: calc((17 / 1920) * 100vw);
+    --fs-nav: calc((18 / 1920) * 100vw);
+    --fs-xs: calc((14 / 1920) * 100vw);
+    --fs-xxs: calc((10 / 1920) * 100vw);
+    --nav-height: calc(2 * var(--spacer));
+    --slideDistance: calc((-1 * (100vw - (-2 * var(--spacer))) / 3));
+  
+  
+    --lh-normal: calc((36 / 1920) * 100vw);
+    --font-family: Nunito-Sans;
+    --btn-br: calc((12 / 1920) * 100vw);
+  }
+
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  
+  @media only screen and (max-width: 1100px) {
+    :root {
+      --spacer: 20px;
+      --spacer-175: 5vw;
+    }
+  }
+    
+    @keyframes slide-in {
+      from {
+          transform: translateX(100vw);
+      }
+  
+      to {
+        transform: translateX(0vw);
+  
+      }
+    }
+  
+    @keyframes slide-out {
+      from {
+        transform: translateX(0vw);
+      }
+  
+      to {
+        transform: translateX(100vw);
+      }
+    }
+  
+    .slide-in {
+      animation-name: slide-in;
+      animation-duration: 500ms;
+      animation-timing-function: ease;
+    }
+  
+    .slide-out {
+      animation-name: slide-out;
+      animation-duration: 500ms;
+      animation-timing-function: ease;
+    }
