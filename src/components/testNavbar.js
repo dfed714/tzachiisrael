@@ -1,5 +1,3 @@
-import "../components/Menu.css";
-import "../components/Navbar.css";
 import { NavLink } from "react-router-dom";
 import client from "../client";
 import React, { useState, useEffect, useRef } from "react";

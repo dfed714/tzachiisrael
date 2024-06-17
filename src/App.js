@@ -11,9 +11,10 @@ import Post from "./components/Post.js";
 import Blog from "./components/Blog.js";
 import SinglePost from "./components/SinglePost.js";
 import Footer from "./components/Footer.js";
-import "./components/Menu.css";
-import "./components/Navbar.css";
-import "./components/Core.css";
+import "./css/Menu.css";
+import "./css/Home.css";
+import "./css/Navbar.css";
+import "./css/Core.css";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route element={<Blog />} path="/blog" />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }
