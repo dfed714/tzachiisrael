@@ -46,7 +46,7 @@ export default function Programs() {
   }, []);
 
   return (
-    <main className="program">
+    <section className="program">
       {programData &&
         filterData(programData[0], "title", "Programs").map((el, index) => (
           <div className="banner" key={index}>
@@ -73,6 +73,6 @@ export default function Programs() {
               </div>
             );
           })}
-    </main>
+    </section>
   );
 }

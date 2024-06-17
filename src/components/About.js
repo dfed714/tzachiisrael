@@ -60,7 +60,7 @@ export default function About() {
   }, []);
 
   return (
-    <main className="about">
+    <section className="about">
       {aboutData &&
         filterData(aboutData[0], "title", "About").map((el, index) => (
           <section className="banner" key={index}>
@@ -103,6 +103,6 @@ export default function About() {
               );
             })}
       </section>
-    </main>
+    </section>
   );
 }

@@ -43,7 +43,7 @@ export default function Gallery() {
       .catch(console.error);
   }, []);
   return (
-    <main className="gallery">
+    <section className="gallery">
       {galleryData &&
         filterData(galleryData[0], "title", "Gallery").map((el, index) => (
           <section className={`banner navy`} key={index}>
@@ -67,6 +67,6 @@ export default function Gallery() {
             );
           })}
       </section>
-    </main>
+    </section>
   );
 }

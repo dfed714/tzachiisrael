@@ -47,7 +47,7 @@ export default function Volunteer() {
       .catch(console.error);
   }, []);
   return (
-    <main className="volunteer">
+    <section className="volunteer">
       {volunteerData &&
         filterData(volunteerData[0], "title", "Volunteer").map((el, index) => {
           return (
@@ -74,6 +74,6 @@ export default function Volunteer() {
             </section>
           );
         })}
-    </main>
+    </section>
   );
 }

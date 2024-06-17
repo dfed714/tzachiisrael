@@ -47,7 +47,7 @@ export default function Contact() {
       .catch(console.error);
   }, []);
   return (
-    <main className="contact">
+    <section className="contact">
       {contactData &&
         filterData(contactData[0], "title", "Contact").map((el, index) => {
           return (
@@ -98,6 +98,6 @@ export default function Contact() {
             </section>
           );
         })}
-    </main>
+    </section>
   );
 }
