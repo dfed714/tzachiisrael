@@ -8,8 +8,38 @@
   }
 
   .navbar {
+    justify-content: space-between;
+    height: var(--nav-height);
+    padding-inline: var(--spacer);
+    align-items: center;
+    padding-block: 0;
+    
     nav {
       display: flex;
+    }
+
+    > a {
+      height: var(--spacer);
+      width: var(--spacer);
+    }
+  
+    img {
+      height: 100%;
+      aspect-ratio: 1/1 !important;
+      object-fit: contain;
+    }
+  
+    .navlinks.dtop-only {
+      justify-content: flex-end;
+      gap: var(--spacer);
+      align-items: center;
+      text-decoration: none;
+  
+      li * {
+        list-style: none;
+        font-size: var(--fs-nav);
+        color: var(--clr-navy);
+      }
     }
   }
   

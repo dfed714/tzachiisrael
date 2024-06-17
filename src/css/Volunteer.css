@@ -1,0 +1,30 @@
+main > section.volunteer {
+    .banner {
+      height: calc(9 * var(--spacer));
+  
+      img {
+        max-height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  
+    .volunteerBlock {
+      padding-inline: var(--spacer-175);
+      margin-block: calc(2 * var(--spacer));
+      display: flex;
+      gap: calc(1.5 * var(--spacer));
+  
+      img {
+        height: calc(9 * var(--spacer));
+      }
+  
+      .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: calc(0.25 * var(--spacer));
+      }
+    }
+  }
+  

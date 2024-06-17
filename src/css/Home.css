@@ -1,1 +1,99 @@
 /* HOME PAGE CSS */
+
+
+main > section.home {
+    padding-bottom: calc(2 * var(--spacer));
+    
+  .banner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 192/90;
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - (2 * var(--spacer)));
+  
+    .bannerImage {
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .sloganImage {
+      width: calc(10 * var(--spacer));
+      height: calc(2 * var(--spacer));
+      object-fit: contain;
+    }
+    
+    .text {
+      display: flex; 
+      width: 50%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: var(--spacer);
+      gap: var(--spacer);
+      animation: slide-left 1s ease-in-out;
+    }
+  
+    button {
+      transform: translateY(-50%);
+      border-radius: 20px;
+    }
+  }
+  
+    .blocks {
+      
+      .homeBlock {
+      display: flex;
+      justify-content: center;
+      gap: calc(2 * var(--spacer));
+      width: calc(100% - (var(--spacer-175) * 2));
+      margin-inline: auto;
+      margin-top: calc(2 * var(--spacer));
+      height: calc(7 * var(--spacer));
+  
+      .text {
+        display: flex;
+        flex-direction: column;
+        width: calc((100% - var(--spacer)) / 2);
+        height: 100%;
+        padding-block: var(--spacer);
+  
+        
+  
+        .title {
+          height: calc(1 * var(--spacer));
+        }
+  
+        .paragraph {
+          height: calc(3 * var(--spacer));
+          max-width: 100%;
+          line-height: 1.5em;
+          min-height: calc(3 * var(--spacer));
+          color: var(--clr-black);
+        }
+  
+        > a {
+          height: calc(1 * var(--spacer));
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+  
+   .blocks .homeBlock img {
+    width: 50%;
+    height: 100%;
+  }
+  
+   .blocks .homeBlock img {
+    object-fit: cover;
+  }
+  }

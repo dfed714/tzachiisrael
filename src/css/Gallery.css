@@ -1,0 +1,22 @@
+main > section.gallery {
+    .banner {
+      height: calc(9 * var(--spacer));
+
+    img {
+      max-height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .container {
+    padding-left: var(--spacer-175);
+    padding-bottom: var(--spacer);
+  }
+
+  .galleryImage {
+    height: calc((450/1920) * 100vw);
+    width: calc((475/1920) * 100vw);
+    margin-top: var(--spacer);
+  }
+}
