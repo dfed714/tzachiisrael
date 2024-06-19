@@ -8,6 +8,10 @@ export default function Volunteer() {
     return arr.filter((el) => el[key] === value);
   };
 
+  (function scrollUp() {
+    window.scrollTo(0, 0);
+  })();
+
   useEffect(() => {
     client
       .fetch(

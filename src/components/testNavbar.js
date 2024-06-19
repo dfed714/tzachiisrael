@@ -13,6 +13,10 @@ export default function Navbar() {
   const mobMenu = useRef(null);
   const dtopNav = useRef(null);
 
+  (function scrollUp() {
+    window.scrollTo(0, 0);
+  })();
+
   let scrolling = [];
 
   const setScrolling = function () {
@@ -109,7 +113,13 @@ export default function Navbar() {
           </NavLink>
           <menu className="navlinks flex-row dtop-only" ref={dtopNav}>
             <li>
-              <NavLink to="/">DONATE</NavLink>
+              <NavLink
+                to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DONATE
+              </NavLink>
             </li>
             <li>
               <NavLink to="/about">ABOUT</NavLink>
@@ -127,7 +137,13 @@ export default function Navbar() {
               <NavLink to="/blog">BLOG</NavLink>
             </li>
             <li>
-              <NavLink to="/">MERCH</NavLink>
+              <NavLink
+                to="https://tzachiisrael.myshopify.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                MERCH
+              </NavLink>
             </li>
             <li>
               <NavLink to="/contact">CONTACT</NavLink>

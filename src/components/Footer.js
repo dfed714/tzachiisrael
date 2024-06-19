@@ -19,6 +19,9 @@ export default function Footer() {
               alt
             }
           },
+          *[_type == 'contactBlock'] {
+            generalEmail,
+          },
         ]`
       )
       .then((footerData) => {
@@ -45,9 +48,6 @@ export default function Footer() {
           <div className="left">
             <menu>
               <li>
-                <NavLink to="/">SITE MAP</NavLink>
-              </li>
-              <li>
                 <NavLink to="/about">ABOUT</NavLink>
               </li>
               <li>
@@ -65,7 +65,13 @@ export default function Footer() {
                 <NavLink to="/blog">BLOG</NavLink>
               </li>
               <li>
-                <NavLink to="/">MERCH</NavLink>
+                <NavLink
+                  to="https://tzachiisrael.myshopify.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MERCH
+                </NavLink>
               </li>
             </menu>
           </div>
@@ -80,12 +86,19 @@ export default function Footer() {
               </div>
             </form>
             <div className="donate-mail">
-              <a>
+              <NavLink
+                to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <button>DONATE</button>
-              </a>
-              <a>
-                <img src="/images/mail.png" alt="mail link" />
-              </a>
+              </NavLink>
+              {footerData &&
+                footerData[1].map((el, index) => (
+                  <a href={"mailto:" + el.generalEmail} key={index}>
+                    <img src="/images/mail.png" alt="mail link" />
+                  </a>
+                ))}
             </div>
           </div>
         </div>
@@ -104,15 +117,27 @@ export default function Footer() {
           </div>
           <div className="right">
             <menu>
-              <a>
+              <NavLink
+                to="https://www.instagram.com/tzachi.israel/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src="/images/insta.svg" alt="instagram link" />
-              </a>
-              <a>
-                <img src="/images/facebook.svg" alt="facebook link" />
-              </a>
-              <a>
+              </NavLink>
+              <NavLink
+                to="https://www.linkedin.com/company/tzachi-israel/?originalSubdomain=il"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src="/images/linkedin.svg" alt="linkedin link" />
-              </a>
+              </NavLink>
+              <NavLink
+                to="https://www.facebook.com/profile.php?id=61558093857037&mibextid=qi2Omg&rdid=EX3bZz6uU2MjyK1C"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/facebook.svg" alt="facebook link" />
+              </NavLink>
             </menu>
           </div>
         </div>

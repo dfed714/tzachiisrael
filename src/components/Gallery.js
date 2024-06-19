@@ -4,6 +4,10 @@ import React, { useState, useEffect } from "react";
 export default function Gallery() {
   const [galleryData, setGalleryData] = useState(null);
 
+  (function scrollUp() {
+    window.scrollTo(0, 0);
+  })();
+
   const filterData = (arr, key, value) => {
     return arr.filter((el) => el[key] === value);
   };

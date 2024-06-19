@@ -11,6 +11,8 @@ import tzachi_logo from './tzachi_logo'
 import slogan from './slogan'
 import footerLogo from './footer_logo'
 import homeSlider from './homeSlider'
+import post from './post'
+import author from './author'
 
 export const schemaTypes = [
   tzachi_logo,
@@ -26,4 +28,6 @@ export const schemaTypes = [
   homeSlider,
   teamMembers,
   blockContent,
+  post,
+  author,
 ]

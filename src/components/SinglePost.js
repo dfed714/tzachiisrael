@@ -1,3 +1,96 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import imageUrlBuilder from "@sanity/image-url";
+import BlockContent from "@sanity/block-content-to-react";
+import client from "../client";
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source);
+}
+
+const copyToClipboard = () => {
+  navigator.clipboard.writeText(window.location);
+};
+
 export default function SinglePost() {
-  return <h1>SinglePost</h1>;
+  (function scrollUp() {
+    window.scrollTo(0, 0);
+  })();
+
+  const [singlePost, setSinglePost] = useState(null);
+  const { slug } = useParams();
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[slug.current == "${slug}"]{
+      title, 
+      _id, 
+      slug,
+      publishedAt, 
+      readTime,
+      mainImage{
+        asset->{
+          _id, 
+          url
+        }
+      }, 
+      body, 
+      "name": author->name,
+      "authorImage":author->image
+    }`
+      )
+      .then((data) => setSinglePost(data[0]))
+      .catch(console.error);
+  }, [slug]);
+
+  if (!singlePost)
+    return (
+      <section className="post-body">
+        <h1>Loading...</h1>
+      </section>
+    );
+
+  return (
+    <section className="post-body">
+      <div className="top-bar">
+        <div className="details">
+          <img
+            className="author-pic"
+            src={urlFor(singlePost.authorImage).url()}
+            alt={singlePost.name}
+          />
+          <div className="author">
+            <p className="authorName">{singlePost.name}</p>
+            <p className="time">
+              {new Date(Date.parse(singlePost.publishedAt)).toLocaleDateString(
+                "en-us",
+                {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                }
+              )}{" "}
+            </p>
+          </div>
+        </div>
+      </div>
+      <h1>{singlePost.title}</h1>
+      <div className="block-content">
+        {singlePost.body.map((el, index) => (
+          <BlockContent
+            key={index}
+            blocks={el}
+            projectId={"8ab8bcjd"}
+            dataset={"production"}
+            imageOptions={{
+              w: Number(el.size) ? Number(el.size) : 375,
+            }}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }

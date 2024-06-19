@@ -6,40 +6,58 @@ import { useLocation } from "react-router-dom";
 export default function Navbar() {
   const [logo, setLogo] = useState(null);
 
+  const menu = useRef(null);
   const hamburger = useRef(null);
-  const xout = useRef(null);
+  const closeMenu = useRef(null);
+  const header = useRef(null);
   const mobMenu = useRef(null);
   const dtopNav = useRef(null);
 
-  const showMenu = () => {
-    mobMenu.current.classList.remove("slide-right");
-    mobMenu.current.classList.add("slide-left");
-    mobMenu.current.classList.remove("display-none");
-    window.setTimeout(() => {
-      if (mobMenu.current) {
-        xout.current.classList.remove("display-none");
-      }
-    }, 150);
+  (function scrollUp() {
+    window.scrollTo(0, 0);
+  })();
+
+  let scrolling = [];
+
+  const setScrolling = function () {
+    scrolling.push(window.scrollY);
+    if (scrolling.length > 2) {
+      scrolling = scrolling.slice(scrolling.length - 2);
+    }
   };
 
-  const hideMenu = () => {
-    if (mobMenu.current) {
-      mobMenu.current.classList.remove("slide-left");
-      mobMenu.current.classList.add("slide-right");
-      xout.current.classList.add("display-none");
-      window.setTimeout(() => {
-        if (mobMenu.current) {
-          mobMenu.current.classList.add("display-none");
-        }
+  window.addEventListener("scroll", function () {
+    setScrolling();
+    if (window.scrollY > 160) {
+      if (scrolling[1] > scrolling[0]) {
+        document.querySelector(".header-mob").style.transform =
+          "translateY(-100%)";
+      } else {
+        document.querySelector(".header-mob").style.transform =
+          "translateY(0%)";
+      }
+    } else {
+      document.querySelector(".header-mob").style.transform = "translateY(0%)";
+    }
+  });
+  const hamburgerFunc = function () {
+    if (menu.current.classList.contains("display-none")) {
+      menu.current.classList.remove("display-none");
+      menu.current.classList.remove("slide-out");
+      menu.current.classList.add("slide-in");
+    } else {
+      menu.current.classList.remove("slide-in");
+      menu.current.classList.add("slide-out");
+      setTimeout(function () {
+        menu.current.classList.add("display-none");
       }, 450);
     }
   };
 
-  if (mobMenu.current) {
-    mobMenu.current.querySelectorAll("li").forEach((button) => {
-      button.addEventListener("click", hideMenu);
-    });
-  }
+  const navLinkFunc = function () {
+    window.scrollTo(0, 0);
+    hamburgerFunc();
+  };
 
   const location = useLocation();
 
@@ -80,102 +98,145 @@ export default function Navbar() {
       .catch(console.error);
   }, []);
   return (
-    <nav className="navbar flex-row">
-      <NavLink to="/">
-        {logo &&
-          logo[0].map((el, index) => (
-            <img
-              src={el.tzachi_logo_image.asset.url}
-              key={index}
-              alt={el.tzachi_logo_image.alt}
-            />
-          ))}
-      </NavLink>
-      <menu className="navlinks flex-row dtop-only" ref={dtopNav}>
-        <li>
-          <NavLink to="/">DONATE</NavLink>
-        </li>
-        <li>
-          <NavLink to="/about">ABOUT</NavLink>
-        </li>
-        <li>
-          <NavLink to="/programs">PROGRAMS</NavLink>
-        </li>
-        <li>
-          <NavLink to="/volunteer">VOLUNTEER</NavLink>
-        </li>
-        <li>
-          <NavLink to="/gallery">GALLERY</NavLink>
-        </li>
-        <li>
-          <NavLink to="/blog">BLOG</NavLink>
-        </li>
-        <li>
-          <NavLink to="/">MERCH</NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact">CONTACT</NavLink>
-        </li>
-      </menu>
-      <div className="mob-menu mob-only display-none" ref={mobMenu}>
-        <menu className="navlinks">
-          <li>
-            <NavLink to="/">DONATE</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">ABOUT</NavLink>
-          </li>
-          <li>
-            <NavLink to="/programs">PROGRAMS</NavLink>
-          </li>
-          <li>
-            <NavLink to="/volunteer">VOLUNTEER</NavLink>
-          </li>
-          <li>
-            <NavLink to="/gallery">GALLERY</NavLink>
-          </li>
-          <li>
-            <NavLink to="/blog">BLOG</NavLink>
-          </li>
-          <li>
-            <NavLink to="/">MERCH</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">CONTACT</NavLink>
-          </li>
-          <li>
-            <ul className="flex-row g-spacer">
-              <li>
-                <a>
-                  <img src="/images/insta.svg" alt="instagram link" />
-                </a>
-              </li>
-              <li>
-                <a>
-                  <img src="/images/facebook.svg" alt="facebook link" />
-                </a>
-              </li>
-              <li>
-                <a>
-                  <img src="/images/linkedin.svg" alt="linkedin link" />
-                </a>
-              </li>
-            </ul>
-          </li>
-          {logo &&
-            logo[1].map((el, index) => (
-              <li key={index}>
-                <a href={"mailto:" + el.generalEmail}>{el.generalEmail}</a>
-              </li>
-            ))}
-        </menu>
-      </div>
-      <button className="hamburger mob-only" ref={hamburger} onClick={showMenu}>
-        <i className="fa-solid fa-bars"></i>
-      </button>
-      <button className="xout display-none" ref={xout} onClick={hideMenu}>
-        <i className="fa-solid fa-x"></i>
-      </button>
-    </nav>
+    <>
+      <header>
+        <nav className="navbar flex-row">
+          <NavLink to="/">
+            {logo &&
+              logo[0].map((el, index) => (
+                <img
+                  src={el.tzachi_logo_image.asset.url}
+                  key={index}
+                  alt={el.tzachi_logo_image.alt}
+                />
+              ))}
+          </NavLink>
+          <menu className="navlinks flex-row dtop-only" ref={dtopNav}>
+            <li>
+              <NavLink
+                to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DONATE
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">ABOUT</NavLink>
+            </li>
+            <li>
+              <NavLink to="/programs">PROGRAMS</NavLink>
+            </li>
+            <li>
+              <NavLink to="/volunteer">VOLUNTEER</NavLink>
+            </li>
+            <li>
+              <NavLink to="/gallery">GALLERY</NavLink>
+            </li>
+            <li>
+              <NavLink to="/blog">BLOG</NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="https://tzachiisrael.myshopify.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                MERCH
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">CONTACT</NavLink>
+            </li>
+          </menu>
+        </nav>
+        <div className="header-mob" ref={header}>
+          <NavLink to="/">
+            {logo &&
+              logo[0].map((el, index) => (
+                <img
+                  src={el.tzachi_logo_image.asset.url}
+                  key={index}
+                  alt={el.tzachi_logo_image.alt}
+                />
+              ))}
+          </NavLink>
+          <button
+            className="hamburger"
+            aria-label="Menu Button"
+            onClick={hamburgerFunc}
+            ref={hamburger}
+          >
+            <i className="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </header>
+      <section className="menu display-none slide-in" ref={menu}>
+        <header className="header-menu">
+          <button
+            className="close-menu"
+            onClick={hamburgerFunc}
+            ref={closeMenu}
+          >
+            <i className="fa-solid fa-x"></i>
+          </button>
+        </header>
+        <nav>
+          <menu className="menu-nav">
+            <li>
+              <NavLink to="/" exact="true">
+                DONATE
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">ABOUT</NavLink>
+            </li>
+            <li>
+              <NavLink to="/programs">PROGRAMS</NavLink>
+            </li>
+            <li>
+              <NavLink to="/volunteer">VOLUNTEER</NavLink>
+            </li>
+            <li>
+              <NavLink to="/gallery">GALLERY</NavLink>
+            </li>
+            <li>
+              <NavLink to="/blog">BLOG</NavLink>
+            </li>
+            <li>
+              <NavLink to="/">MERCH</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">CONTACT</NavLink>
+            </li>
+            <li>
+              <menu className="menu-socials">
+                <li>
+                  <a>
+                    <img src="/images/insta.svg" alt="instagram link" />
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <img src="/images/facebook.svg" alt="facebook link" />
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <img src="/images/linkedin.svg" alt="linkedin link" />
+                  </a>
+                </li>
+              </menu>
+            </li>
+            {logo &&
+              logo[1].map((el, index) => (
+                <li key={index}>
+                  <a href={"mailto:" + el.generalEmail}>{el.generalEmail}</a>
+                </li>
+              ))}
+          </menu>
+        </nav>
+      </section>
+    </>
   );
 }

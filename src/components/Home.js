@@ -7,6 +7,10 @@ export default function Home() {
 
   const [slideIndex, setSlideIndex] = useState(0);
 
+  (function scrollUp() {
+    window.scrollTo(0, 0);
+  })();
+
   const slider = useRef();
   const slideDistance = `var(--slideDistance)`;
 

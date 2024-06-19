@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/testNavbar.js";
+import Navbar from "./components/Navbar.js";
 import Home from "./components/Home.js";
 import About from "./components/About.js";
 import Programs from "./components/Programs.js";
@@ -11,10 +11,16 @@ import Post from "./components/Post.js";
 import Blog from "./components/Blog.js";
 import SinglePost from "./components/SinglePost.js";
 import Footer from "./components/Footer.js";
+import "./css/Core.css";
+import "./css/Footer.css";
+import "./css/Navbar.css";
 import "./css/Menu.css";
 import "./css/Home.css";
-import "./css/Navbar.css";
-import "./css/Core.css";
+import "./css/About.css";
+import "./css/Contact.css";
+import "./css/Volunteer.css";
+import "./css/Programs.css";
+import "./css/Gallery.css";
 
 function App() {
   return (

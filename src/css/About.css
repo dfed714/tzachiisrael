@@ -50,6 +50,7 @@ main > section.about {
           height: 100%;
           left: 0;
           position: absolute;
+          object-fit: cover;
         }
       }
     }
