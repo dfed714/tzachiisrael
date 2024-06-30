@@ -10,11 +10,11 @@
 }
 
 .close-menu {
-    font-size: calc(1.5 * var(--spacer));
+    font-size: calc(1 * var(--spacer));
     background-color: var(--clr-navy);
     border: none;
-    width: calc(2 * var(--spacer));
-    height: calc(2 * var(--spacer));
+    width: calc(1 * var(--spacer));
+    height: calc(1 * var(--spacer));
     cursor: pointer;
     color: var(--clr-white);
   }

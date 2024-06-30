@@ -53,7 +53,7 @@
 @media only screen and (max-width: 1110px) {
 
   body {
-    padding-top: calc(4 * var(--spacer));
+    padding-top: calc(2 * var(--spacer));
   }
 
   .header-desktop, .navbar {
@@ -63,10 +63,10 @@
   .hamburger {
     background-color: transparent;
     border: none;
-    width: calc(2 * var(--spacer));
-    height: calc(2 * var(--spacer));
+    width: calc(1 * var(--spacer));
+    height: calc(1 * var(--spacer));
     color: var(--clr-gold) !important;
-    font-size: calc(2 * var(--spacer));
+    font-size: calc(1 * var(--spacer));
     display: grid;
     place-content: center;
   }
@@ -85,8 +85,8 @@
     transition: transform 50ms ease-in-out;
 
     a {
-      width: calc(2 * var(--spacer));
-      height: calc(2 * var(--spacer));
+      width: calc(1 * var(--spacer));
+      height: calc(1 * var(--spacer));
       img {
         height: 100%;
         aspect-ratio: 1/1;
