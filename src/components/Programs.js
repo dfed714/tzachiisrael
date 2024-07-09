@@ -50,7 +50,7 @@ export default function Programs() {
       {programData &&
         filterData(programData[0], "title", "Programs").map((el, index) => (
           <div className="banner" key={index}>
-            <img src={el.mainImage.asset.url} />
+            <img src={el.mainImage.asset.url} alt={el.mainImage.alt} />
           </div>
         ))}
       {programData &&
@@ -68,7 +68,7 @@ export default function Programs() {
                     <p className="title">{el.title}</p>
                     <p className="paragraph">{el.text}</p>
                   </div>
-                  <img src={el.blockImage.asset.url} />
+                  <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
                 </div>
               </div>
             );

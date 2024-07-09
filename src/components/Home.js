@@ -1,6 +1,5 @@
 import client from "../client";
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
 
 export default function Home() {
   const [homeData, setHomeData] = useState(null);
@@ -104,13 +103,18 @@ export default function Home() {
       {homeData &&
         filterData(homeData[0], "title", "Home").map((el, index) => (
           <section className={`banner navy`} key={index}>
-            <img src={el.mainImage.asset.url} className="bannerImage" />
+            <img
+              src={el.mainImage.asset.url}
+              alt={el.mainImage.asset.alt}
+              className="bannerImage"
+            />
             <div className="text">
               {homeData &&
                 homeData[1].map((slogan, i) => {
                   return (
                     <img
                       src={slogan.sloganImage.asset.url}
+                      alt={slogan.sloganImage.asset.url}
                       key={i}
                       className="sloganImage"
                     />
@@ -141,7 +145,10 @@ export default function Home() {
                       <button className="button">{el.button}</button>
                     </a>
                   </div>
-                  <img src={el.blockImage.asset.url} />
+                  <img
+                    src={el.blockImage.asset.url}
+                    alt={el.blockImage.asset.url}
+                  />
                 </div>
               </section>
             );
@@ -174,11 +181,13 @@ export default function Home() {
           src="../images/triangle.png"
           className="prevSlide dtop-only"
           onClick={goToPreviousSlide}
+          alt="Previous Slide"
         />
         <img
           src="../images/triangle.png"
           className="nextSlide dtop-only"
           onClick={goToNextSlide}
+          alt="Next Slide"
         />
       </section>
     </section>

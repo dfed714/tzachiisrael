@@ -64,7 +64,7 @@ export default function About() {
       {aboutData &&
         filterData(aboutData[0], "title", "About").map((el, index) => (
           <section className="banner" key={index}>
-            <img src={el.mainImage.asset.url} />
+            <img src={el.mainImage.asset.url} alt={el.mainImage.asset.alt} />
           </section>
         ))}
       {aboutData &&
@@ -75,7 +75,10 @@ export default function About() {
             return (
               <section className={`blocks ${colors[index]}`}>
                 <div className="aboutBlock" key={index}>
-                  <img src={el.blockImage.asset.url} />
+                  <img
+                    src={el.blockImage.asset.url}
+                    alt={el.blockImage.asset.alt}
+                  />
 
                   <div className="text">
                     <p className="title">{el.title}</p>
@@ -96,7 +99,10 @@ export default function About() {
             .map((el, index) => {
               return (
                 <div className="teamMember" key={index}>
-                  <img src={el.memberImage.asset.url} />
+                  <img
+                    src={el.memberImage.asset.url}
+                    alt={el.memberImage.asset.alt}
+                  />
                   <p className="name">{el.name}</p>
                   <p className="role">{el.role}</p>
                 </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import client from "../client";
@@ -9,10 +8,6 @@ const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source);
 }
-
-const copyToClipboard = () => {
-  navigator.clipboard.writeText(window.location);
-};
 
 export default function SinglePost() {
   (function scrollUp() {

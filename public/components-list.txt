@@ -1,0 +1,14 @@
+Navbar
+Mobile Menu
+Home Page Banner
+Image, Title, Paragraph, Button Block
+Home Page Slider
+Home Page Blog Post Block
+Footer
+Page Banner
+Image, Title, Paragraph Block
+Our Team Block
+Gallery Images Block
+Blog Post Thumnails Galler Block
+Blog Post Block
+Contact Page Image, Title, Grid, Icons Block

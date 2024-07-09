@@ -39,6 +39,7 @@ export default function Footer() {
               src={el.footerLogoImage.asset.url}
               className="footerLogoImage"
               key={index}
+              alt={el.footerLogoImage.alt}
             />
           ))}
       </section>

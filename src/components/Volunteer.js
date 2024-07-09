@@ -56,7 +56,7 @@ export default function Volunteer() {
         filterData(volunteerData[0], "title", "Volunteer").map((el, index) => {
           return (
             <section className="banner" key={index}>
-              <img src={el.mainImage.asset.url} />
+              <img src={el.mainImage.asset.url} alt={el.mainImage.alt} />
             </section>
           );
         })}
@@ -65,7 +65,7 @@ export default function Volunteer() {
           return (
             <section className="blocks">
               <div className="volunteerBlock" key={index}>
-                <img src={el.blockImage.asset.url} />
+                <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
 
                 <div className="text brown">
                   <p className="title">{el.title}</p>

@@ -21,12 +21,13 @@ import "./css/Contact.css";
 import "./css/Volunteer.css";
 import "./css/Programs.css";
 import "./css/Gallery.css";
+// import "./css/old_css.css";
 
 function App() {
   return (
     <Router basename="/">
       <Navbar />
-      <main>
+      {/* <main>
         <Routes>
           <Route element={<Home />} path="/" exact />
           <Route element={<About />} path="/about" />
@@ -39,7 +40,7 @@ function App() {
           <Route element={<Blog />} path="/blog" />
         </Routes>
       </main>
-      <Footer />
+      <Footer /> */}
     </Router>
   );
 }

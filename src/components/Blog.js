@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import { Link } from "react-router-dom";
@@ -10,7 +10,6 @@ function urlFor(source) {
 
 export default function Blog() {
   const [postData, setPost] = useState([]);
-  const searchBarInput = useRef();
 
   (function scrollUp() {
     window.scrollTo(0, 0);

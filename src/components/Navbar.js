@@ -10,7 +10,6 @@ export default function Navbar() {
   const hamburger = useRef(null);
   const closeMenu = useRef(null);
   const header = useRef(null);
-  const mobMenu = useRef(null);
   const dtopNav = useRef(null);
 
   (function scrollUp() {
@@ -41,22 +40,19 @@ export default function Navbar() {
     }
   });
   const hamburgerFunc = function () {
-    if (menu.current.classList.contains("display-none")) {
-      menu.current.classList.remove("display-none");
-      menu.current.classList.remove("slide-out");
-      menu.current.classList.add("slide-in");
-    } else {
-      menu.current.classList.remove("slide-in");
-      menu.current.classList.add("slide-out");
-      setTimeout(function () {
-        menu.current.classList.add("display-none");
-      }, 450);
+    if (menu.current) {
+      if (menu.current.classList.contains("display-none")) {
+        menu.current.classList.remove("display-none");
+        menu.current.classList.remove("slide-out");
+        menu.current.classList.add("slide-in");
+      } else {
+        menu.current.classList.remove("slide-in");
+        menu.current.classList.add("slide-out");
+        setTimeout(function () {
+          menu.current.classList.add("display-none");
+        }, 450);
+      }
     }
-  };
-
-  const navLinkFunc = function () {
-    window.scrollTo(0, 0);
-    hamburgerFunc();
   };
 
   const location = useLocation();
@@ -98,79 +94,77 @@ export default function Navbar() {
       .catch(console.error);
   }, []);
   return (
-    <>
-      <header>
-        <nav className="navbar flex-row">
-          <NavLink to="/">
-            {logo &&
-              logo[0].map((el, index) => (
-                <img
-                  src={el.tzachi_logo_image.asset.url}
-                  key={index}
-                  alt={el.tzachi_logo_image.alt}
-                />
-              ))}
-          </NavLink>
-          <menu className="navlinks flex-row dtop-only" ref={dtopNav}>
-            <li>
-              <NavLink
-                to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
-                target="_blank"
-                rel="noreferrer"
-              >
-                DONATE
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">ABOUT</NavLink>
-            </li>
-            <li>
-              <NavLink to="/programs">PROGRAMS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/volunteer">VOLUNTEER</NavLink>
-            </li>
-            <li>
-              <NavLink to="/gallery">GALLERY</NavLink>
-            </li>
-            <li>
-              <NavLink to="/blog">BLOG</NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="https://tzachiisrael.myshopify.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                MERCH
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">CONTACT</NavLink>
-            </li>
-          </menu>
-        </nav>
-        <div className="header-mob" ref={header}>
-          <NavLink to="/">
-            {logo &&
-              logo[0].map((el, index) => (
-                <img
-                  src={el.tzachi_logo_image.asset.url}
-                  key={index}
-                  alt={el.tzachi_logo_image.alt}
-                />
-              ))}
-          </NavLink>
-          <button
-            className="hamburger"
-            aria-label="Menu Button"
-            onClick={hamburgerFunc}
-            ref={hamburger}
-          >
-            <i className="fa-solid fa-bars"></i>
-          </button>
-        </div>
-      </header>
+    <header>
+      <nav className="navbar dtop-only">
+        <NavLink to="/">
+          {logo &&
+            logo[0].map((el, index) => (
+              <img
+                src={el.tzachi_logo_image.asset.url}
+                key={index}
+                alt={el.tzachi_logo_image.alt}
+              />
+            ))}
+        </NavLink>
+        <menu className="navlinks" ref={dtopNav}>
+          <li>
+            <NavLink
+              to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              DONATE
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">ABOUT</NavLink>
+          </li>
+          <li>
+            <NavLink to="/programs">PROGRAMS</NavLink>
+          </li>
+          <li>
+            <NavLink to="/volunteer">VOLUNTEER</NavLink>
+          </li>
+          <li>
+            <NavLink to="/gallery">GALLERY</NavLink>
+          </li>
+          <li>
+            <NavLink to="/blog">BLOG</NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="https://tzachiisrael.myshopify.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              MERCH
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">CONTACT</NavLink>
+          </li>
+        </menu>
+      </nav>
+      <div className="header-mob mob-only" ref={header}>
+        <NavLink to="/">
+          {logo &&
+            logo[0].map((el, index) => (
+              <img
+                src={el.tzachi_logo_image.asset.url}
+                key={index}
+                alt={el.tzachi_logo_image.alt}
+              />
+            ))}
+        </NavLink>
+        <button
+          className="hamburger"
+          aria-label="Menu Button"
+          onClick={hamburgerFunc}
+          ref={hamburger}
+        >
+          <i className="fa-solid fa-bars"></i>
+        </button>
+      </div>
       <section className="menu display-none slide-in" ref={menu}>
         <header className="header-menu">
           <button
@@ -184,47 +178,73 @@ export default function Navbar() {
         <nav>
           <menu className="menu-nav">
             <li>
-              <NavLink to="/" exact="true">
+              <NavLink to="/" exact="true" onClick={hamburgerFunc()}>
                 DONATE
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about">ABOUT</NavLink>
+              <NavLink to="/about" onClick={hamburgerFunc()}>
+                ABOUT
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/programs">PROGRAMS</NavLink>
+              <NavLink to="/programs" onClick={hamburgerFunc()}>
+                PROGRAMS
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/volunteer">VOLUNTEER</NavLink>
+              <NavLink to="/volunteer" onClick={hamburgerFunc()}>
+                VOLUNTEER
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/gallery">GALLERY</NavLink>
+              <NavLink to="/gallery" onClick={hamburgerFunc()}>
+                GALLERY
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/blog">BLOG</NavLink>
+              <NavLink to="/blog" onClick={hamburgerFunc()}>
+                BLOG
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/">MERCH</NavLink>
+              <NavLink to="/" onClick={hamburgerFunc()}>
+                MERCH
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/contact">CONTACT</NavLink>
+              <NavLink to="/contact" onClick={hamburgerFunc()}>
+                CONTACT
+              </NavLink>
             </li>
             <li>
               <menu className="menu-socials">
-                <li>
-                  <a>
+                <li onClick={hamburgerFunc()}>
+                  <NavLink
+                    to="https://www.instagram.com/tzachi.israel/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img src="/images/insta.svg" alt="instagram link" />
-                  </a>
+                  </NavLink>
                 </li>
-                <li>
-                  <a>
+                <li onClick={hamburgerFunc()}>
+                  <NavLink
+                    to="https://www.facebook.com/profile.php?id=61558093857037&mibextid=qi2Omg&rdid=EX3bZz6uU2MjyK1C"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img src="/images/facebook.svg" alt="facebook link" />
-                  </a>
+                  </NavLink>
                 </li>
-                <li>
-                  <a>
+                <li onClick={hamburgerFunc()}>
+                  <NavLink
+                    to="https://www.linkedin.com/company/tzachi-israel/?originalSubdomain=il"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img src="/images/linkedin.svg" alt="linkedin link" />
-                  </a>
+                  </NavLink>
                 </li>
               </menu>
             </li>
@@ -237,6 +257,6 @@ export default function Navbar() {
           </menu>
         </nav>
       </section>
-    </>
+    </header>
   );
 }

@@ -1,5 +1,5 @@
 import client from "../client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Gallery() {
   const [galleryData, setGalleryData] = useState(null);
@@ -10,6 +10,14 @@ export default function Gallery() {
 
   const filterData = (arr, key, value) => {
     return arr.filter((el) => el[key] === value);
+  };
+
+  const modal = useRef();
+
+  const modalToggle = (title, url) => {
+    [...modal.current.children][0].textContent = title;
+    [...modal.current.children][1].src = url;
+    modal.current.classList.toggle("display-none");
   };
 
   useEffect(() => {
@@ -51,14 +59,18 @@ export default function Gallery() {
       {galleryData &&
         filterData(galleryData[0], "title", "Gallery").map((el, index) => (
           <section className={`banner navy`} key={index}>
-            <img src={el.mainImage.asset.url} className="bannerImage" />
+            <img
+              src={el.mainImage.asset.url}
+              className="bannerImage"
+              alt={el.alt}
+            />
           </section>
         ))}
       <section className="container">
         {galleryData &&
           galleryData[1].map((el, index) => {
             let marginRight = "";
-            if ((index + 1) % 3 != 0) {
+            if ((index + 1) % 3 !== 0) {
               marginRight = "margin-right-spacer";
             }
 
@@ -67,10 +79,21 @@ export default function Gallery() {
                 src={el.galleryImage.asset.url}
                 className={`galleryImage ${marginRight}`}
                 key={index}
+                alt={el.imageTitle}
+                onClick={() =>
+                  modalToggle(el.imageTitle, el.galleryImage.asset.url)
+                }
               />
             );
           })}
       </section>
+      <div className="modal display-none" ref={modal}>
+        <p className="title"></p>
+        <img alt="" />
+        <button className="closeModal button" onClick={modalToggle}>
+          Close
+        </button>
+      </div>
     </section>
   );
 }
