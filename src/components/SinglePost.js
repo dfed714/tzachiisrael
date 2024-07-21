@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import client from "../client";
+import { NavLink } from "react-router-dom";
 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
@@ -50,29 +51,12 @@ export default function SinglePost() {
 
   return (
     <section className="post-body">
-      <div className="top-bar">
-        <div className="details">
-          <img
-            className="author-pic"
-            src={urlFor(singlePost.authorImage).url()}
-            alt={singlePost.name}
-          />
-          <div className="author">
-            <p className="authorName">{singlePost.name}</p>
-            <p className="time">
-              {new Date(Date.parse(singlePost.publishedAt)).toLocaleDateString(
-                "en-us",
-                {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                }
-              )}{" "}
-            </p>
-          </div>
-        </div>
-      </div>
-      <h1>{singlePost.title}</h1>
+      <img
+        src={urlFor(singlePost.mainImage.asset).width(800).url()}
+        alt=""
+        className="thumbnail"
+      />
+      <h1 className="title">{singlePost.title}</h1>
       <div className="block-content">
         {singlePost.body.map((el, index) => (
           <BlockContent
@@ -86,6 +70,9 @@ export default function SinglePost() {
           />
         ))}
       </div>
+      <NavLink to="/blog" className="button">
+        BACK
+      </NavLink>
     </section>
   );
 }

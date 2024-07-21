@@ -15,45 +15,79 @@ export default function Blog() {
     window.scrollTo(0, 0);
   })();
 
+  const filterData = (arr, key, value) => {
+    return arr.filter((el) => el[key] === value);
+  };
+
   useEffect(() => {
     client
       .fetch(
         `[*[_type == 'post'] {
-          title, 
-          slug, 
-          snippet, 
-          author, 
-          mainImage{
-            asset->{
-                _id, 
-                url
+            title, 
+            slug, 
+            snippet, 
+            author, 
+            mainImage{
+              asset->{
+                  _id, 
+                  url
+              }, 
+              alt
             }, 
-            alt
-          }, 
-          publishedAt}]`
+            publishedAt
+          },
+          *[_type == 'banners'] {
+            title, 
+            mainImage{
+              asset->{
+                  _id, 
+                  url
+              }, 
+              alt
+            }  
+          }, ]`
       )
       .then((data) => {
         data = data.sort(
           (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
         );
         setPost(data);
+        console.log(filterData(postData[1], "title", "Blog"));
       })
       .catch(console.error);
   }, []);
 
   return (
     <section className="blog">
-      {postData.length > 0 &&
-        postData[0].map((post, index) => (
-          <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+      {postData[1] &&
+        filterData(postData[1], "title", "Blog").map((el, index) => (
+          <section className={`banner navy`} key={index}>
             <img
-              src={urlFor(post.mainImage).width(200).url()}
-              alt={post.title}
+              src={el.mainImage.asset.url}
+              className="bannerImage"
+              alt={el.alt}
             />
-            <h1>{post.title}</h1>
-            <p>{post.snippet}</p>
-          </Link>
+          </section>
         ))}
+      <section className="blogPosts">
+        {postData.length > 0 &&
+          postData[0].map((post, index) => (
+            <Link
+              to={"/post/" + post.slug.current}
+              key={post.slug.current}
+              className="thumbnail"
+            >
+              <img
+                src={urlFor(post.mainImage).width(200).url()}
+                alt={post.title}
+              />
+              <div className="text">
+                <h1 className="title">{post.title}</h1>
+                <p className="snippet">{post.snippet}</p>
+              </div>
+            </Link>
+          ))}
+      </section>
     </section>
   );
 }

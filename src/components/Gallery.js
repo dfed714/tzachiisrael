@@ -1,5 +1,6 @@
 import client from "../client";
 import React, { useState, useEffect, useRef } from "react";
+import imageUrlBuilder from "@sanity/image-url";
 
 export default function Gallery() {
   const [galleryData, setGalleryData] = useState(null);

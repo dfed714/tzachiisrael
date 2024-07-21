@@ -94,21 +94,21 @@ export default function Contact() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="/images/insta.svg" alt="instagram link" />
+                    <img src="/images/insta_gold.svg" alt="instagram link" />
                   </NavLink>
                   <NavLink
                     to="https://www.linkedin.com/company/tzachi-israel/?originalSubdomain=il"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="/images/linkedin.svg" alt="linkedin link" />
+                    <img src="/images/linkedin_gold.svg" alt="linkedin link" />
                   </NavLink>
                   <NavLink
                     to="https://www.facebook.com/profile.php?id=61558093857037&mibextid=qi2Omg&rdid=EX3bZz6uU2MjyK1C"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="/images/facebook.svg" alt="facebook link" />
+                    <img src="/images/facebook_gold.svg" alt="facebook link" />
                   </NavLink>
                 </menu>
               </div>

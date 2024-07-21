@@ -1,0 +1,104 @@
+section.blog .blogPosts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: var(--spacer-175);
+    gap: var(--spacer);
+    margin-block: var(--spacer);
+
+    .thumbnail {
+        max-width: 90vw;
+        background-color: var(--clr-blue);
+        height: 600px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+        }
+
+        > .text {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow: hidden;
+            width: 100%;
+            
+            .title {
+                font-size: 36px;
+                color: var(--clr-navy);
+                font-weight: 800;
+            }
+            
+            .snippet {
+                font-size: 24px;
+                line-height: 36px;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 4; /* Number of lines */
+                -webkit-box-orient: vertical;
+            } 
+        }
+    }
+}
+
+section.home {
+    .blogPosts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: var(--spacer-175);
+    gap: var(--spacer);
+    margin-block: var(--spacer);
+
+    .thumbnail {
+        max-width: 90vw;
+        height: 600px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+        }
+
+        > .text {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden;
+            width: 100%;
+            
+            .title {
+                font-size: 36px;
+                color: var(--clr-navy);
+                font-weight: 400;
+            }
+            
+            .snippet {
+                font-size: 24px;
+                line-height: 36px;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 6; /* Number of lines */
+                -webkit-box-orient: vertical;
+            } 
+
+            .button {
+                background-color: var(--clr-lightblue);
+                color: var(--clr-navy);
+                font-weight: 900 !important;
+                margin-top: 20px;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+}

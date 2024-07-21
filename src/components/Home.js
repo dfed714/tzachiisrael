@@ -1,5 +1,12 @@
 import client from "../client";
 import React, { useState, useEffect, useRef } from "react";
+import imageUrlBuilder from "@sanity/image-url";
+import { Link } from "react-router-dom";
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source);
+}
 
 export default function Home() {
   const [homeData, setHomeData] = useState(null);
@@ -89,7 +96,21 @@ export default function Home() {
               id,
             }
           }
-        }
+        },
+        *[_type == 'post'] {
+            title, 
+            slug, 
+            snippet, 
+            author, 
+            mainImage{
+              asset->{
+                  _id, 
+                  url
+              }, 
+              alt
+            }, 
+            publishedAt
+          },
       ]`
       )
       .then((homeData) => {
@@ -189,6 +210,33 @@ export default function Home() {
           onClick={goToNextSlide}
           alt="Next Slide"
         />
+      </section>
+      <div className="section-split navy">
+        <h1 className="title">WHAT'S NEW?</h1>
+        <hr />
+      </div>
+      <section className="blogPosts">
+        {homeData &&
+          homeData[4].slice(0, 3).map((post, index) => (
+            <div>
+              <Link
+                to={"/post/" + post.slug.current}
+                key={post.slug.current}
+                className="thumbnail"
+              >
+                <div className="text">
+                  <h1 className="title">{post.title}</h1>
+                  <p className="snippet">{post.snippet}</p>
+                  <Link
+                    to={"/post/" + post.slug.current}
+                    key={post.slug.current}
+                  >
+                    <button className="button navy">LEARN MORE</button>
+                  </Link>
+                </div>
+              </Link>
+            </div>
+          ))}
       </section>
     </section>
   );
