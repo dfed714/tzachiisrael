@@ -77,12 +77,28 @@ export default function Footer() {
             </menu>
           </div>
           <div className="right">
-            <form>
+            <form
+              name="Tzachi-Israel-Subscribe-Form"
+              method="POST"
+              data-netlify="true"
+              className="form"
+              onSubmit="submit"
+            >
+              <input
+                type="hidden"
+                name="form-name"
+                value="Tzachi-Israel-Subscribe-Form"
+              />
               <label htmlFor="subscribe-input">
                 Subscribe to receive our newsletter
               </label>
               <div className="newsletter-input flex-row">
-                <input type="text" id="subscribe-input"></input>
+                <input
+                  type="text"
+                  name="email"
+                  id="subscribe-input"
+                  required
+                ></input>
                 <button type="submit">SUBSCRIBE</button>
               </div>
             </form>

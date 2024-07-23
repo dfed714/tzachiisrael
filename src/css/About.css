@@ -59,6 +59,7 @@
     .aboutBlock {
       flex-direction: column-reverse;
       align-items: center;
+      padding-inline: 0;
 
       img {
         width: 100%;
@@ -68,7 +69,7 @@
       }
 
       .text {
-        width: 100%;
+        width: calc(100% - (2 * var(--margin)));
       }
     }
   }

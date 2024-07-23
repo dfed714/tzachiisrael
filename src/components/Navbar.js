@@ -25,20 +25,6 @@ export default function Navbar() {
     }
   };
 
-  window.addEventListener("scroll", function () {
-    setScrolling();
-    if (window.scrollY > 160) {
-      if (scrolling[1] > scrolling[0]) {
-        document.querySelector(".header-menu").style.transform =
-          "translateY(-100%)";
-      } else {
-        document.querySelector(".header-menu").style.transform =
-          "translateY(0%)";
-      }
-    } else {
-      document.querySelector(".header-menu").style.transform = "translateY(0%)";
-    }
-  });
   const hamburgerFunc = function () {
     if (menu.current && window.innerWidth < 1150) {
       if (menu.current.classList.contains("display-none")) {
@@ -165,7 +151,7 @@ export default function Navbar() {
           <i className="fa-solid fa-bars"></i>
         </button>
       </div>
-      <div className="menu display-none slide-in" ref={menu}>
+      <div className="menu display-none" ref={menu}>
         <header className="header-menu">
           <button
             className="close-menu"
@@ -178,48 +164,58 @@ export default function Navbar() {
         <nav className="menu-nav">
           <ul className="menu-navlinks">
             <li>
-              <NavLink to="/" exact="true" onClick={hamburgerFunc()}>
+              <NavLink to="/" exact="true" onClick={hamburgerFunc}>
+                HOME
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+                target="_blank"
+                rel="noreferrer"
+                onClick={hamburgerFunc}
+              >
                 DONATE
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" onClick={hamburgerFunc()}>
+              <NavLink to="/about" onClick={hamburgerFunc}>
                 ABOUT
               </NavLink>
             </li>
             <li>
-              <NavLink to="/programs" onClick={hamburgerFunc()}>
+              <NavLink to="/programs" onClick={hamburgerFunc}>
                 PROGRAMS
               </NavLink>
             </li>
             <li>
-              <NavLink to="/volunteer" onClick={hamburgerFunc()}>
+              <NavLink to="/volunteer" onClick={hamburgerFunc}>
                 VOLUNTEER
               </NavLink>
             </li>
             <li>
-              <NavLink to="/gallery" onClick={hamburgerFunc()}>
+              <NavLink to="/gallery" onClick={hamburgerFunc}>
                 GALLERY
               </NavLink>
             </li>
             <li>
-              <NavLink to="/blog" onClick={hamburgerFunc()}>
+              <NavLink to="/blog" onClick={hamburgerFunc}>
                 BLOG
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" onClick={hamburgerFunc()}>
+              <NavLink to="/" onClick={hamburgerFunc}>
                 MERCH
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" onClick={hamburgerFunc()}>
+              <NavLink to="/contact" onClick={hamburgerFunc}>
                 CONTACT
               </NavLink>
             </li>
             <li>
               <menu className="menu-socials">
-                <li onClick={hamburgerFunc()}>
+                <li onClick={hamburgerFunc}>
                   <NavLink
                     to="https://www.instagram.com/tzachi.israel/"
                     target="_blank"
@@ -228,7 +224,7 @@ export default function Navbar() {
                     <img src="/images/insta.svg" alt="instagram link" />
                   </NavLink>
                 </li>
-                <li onClick={hamburgerFunc()}>
+                <li onClick={hamburgerFunc}>
                   <NavLink
                     to="https://www.facebook.com/profile.php?id=61558093857037&mibextid=qi2Omg&rdid=EX3bZz6uU2MjyK1C"
                     target="_blank"
@@ -237,7 +233,7 @@ export default function Navbar() {
                     <img src="/images/facebook.svg" alt="facebook link" />
                   </NavLink>
                 </li>
-                <li onClick={hamburgerFunc()}>
+                <li onClick={hamburgerFunc}>
                   <NavLink
                     to="https://www.linkedin.com/company/tzachi-israel/?originalSubdomain=il"
                     target="_blank"

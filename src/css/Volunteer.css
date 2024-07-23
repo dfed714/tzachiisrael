@@ -31,11 +31,14 @@
     .volunteerBlock {
         flex-direction: column-reverse;
         height: auto !important;
+        padding-inline: 0;
 
         .text {
             justify-content: center;
             align-items: center;
             text-align: center;
+      padding-inline: var(--margin);
+
         }
     }
 }
