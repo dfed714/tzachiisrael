@@ -81,8 +81,8 @@ export default function About() {
                   />
 
                   <div className="text">
-                    <p className="title">{el.title}</p>
-                    <p className="paragraph">{el.text}</p>
+                    <h1>{el.title}</h1>
+                    <p>{el.text}</p>
                   </div>
                 </div>
               </section>

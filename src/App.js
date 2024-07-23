@@ -23,7 +23,7 @@ import "./css/Programs.css";
 import "./css/Gallery.css";
 import "./css/Blog.css";
 import "./css/Post.css";
-import "./css/old_css.css";
+// import "./css/old_css.css";
 
 function App() {
   return (

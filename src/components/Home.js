@@ -160,8 +160,8 @@ export default function Home() {
               <section className="blocks" key={index}>
                 <div className="homeBlock" data-direction={blockDirection}>
                   <div className={`text ${colors[index]}`}>
-                    <p className="title">{el.title}</p>
-                    <p className="paragraph">{el.text}</p>
+                    <h1>{el.title}</h1>
+                    <p>{el.text}</p>
                     <a href={el.buttonLink} target="_blank" rel="noreferrer">
                       <button className="button">{el.button}</button>
                     </a>
@@ -224,16 +224,11 @@ export default function Home() {
                 key={post.slug.current}
                 className="thumbnail"
               >
-                <div className="text">
-                  <h1 className="title">{post.title}</h1>
-                  <p className="snippet">{post.snippet}</p>
-                  <Link
-                    to={"/post/" + post.slug.current}
-                    key={post.slug.current}
-                  >
-                    <button className="button navy">LEARN MORE</button>
-                  </Link>
-                </div>
+                <h1 className="title">{post.title}</h1>
+                <p className="snippet">{post.snippet}</p>
+                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+                  <button className="button navy">LEARN MORE</button>
+                </Link>
               </Link>
             </div>
           ))}

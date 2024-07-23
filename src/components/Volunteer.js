@@ -68,8 +68,8 @@ export default function Volunteer() {
                 <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
 
                 <div className="text brown">
-                  <p className="title">{el.title}</p>
-                  <p className="paragraph">{el.text}</p>
+                  <h1>{el.title}</h1>
+                  <p>{el.text}</p>
                   <a href={el.buttonLink} target="_blank" rel="noreferrer">
                     <button className="button">{el.button}</button>
                   </a>

@@ -67,7 +67,7 @@ export default function Contact() {
             <section className="contactBlock gold" key={index}>
               <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
               <div className="text">
-                <p className="title">CONTACT US</p>
+                <h1>CONTACT US</h1>
                 <div className="addresses">
                   <div>
                     <p>United States Office</p>

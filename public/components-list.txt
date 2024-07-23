@@ -1,14 +1,19 @@
-Navbar
-Mobile Menu
-Home Page Banner
-Image, Title, Paragraph, Button Block
-Home Page Slider
-Home Page Blog Post Block
-Footer
-Page Banner
-Image, Title, Paragraph Block
-Our Team Block
-Gallery Images Block
-Blog Post Thumnails Galler Block
-Blog Post Block
-Contact Page Image, Title, Grid, Icons Block
+Navbar DONE
+Mobile Menu DONE
+Home Page Banner DONE
+Image, Title, Paragraph, Button Block DONE
+Home Page Slider DONE
+Home Page Blog Post Block DONE
+Footer DONE
+Button DONE
+Slider DONE
+Page Banner DONE
+Gallery Images Block DONE
+Image, Title, Paragraph Block DONE
+Volunteer Block DONE
+Blog Post Thumnails Gallery Block DONE
+Our Team Block DONE
+Blog Post Block DONE
+
+
+Contact Page Image, Title, Grid, Icons Block DONE 

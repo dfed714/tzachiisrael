@@ -61,11 +61,12 @@ export default function Programs() {
             if (index % 2 === 0) {
               blockDirection = "imageLeft";
             }
+            let colors = ["gold", "green", "brown"];
             return (
-              <div className="blocks" key={index}>
+              <div className={`blocks ${colors[index]}`} key={index}>
                 <div className="programBlock" data-direction={blockDirection}>
                   <div className="text">
-                    <p className="title">{el.title}</p>
+                    <h1>{el.title}</h1>
                     <p className="paragraph">{el.text}</p>
                   </div>
                   <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />

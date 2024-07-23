@@ -67,7 +67,7 @@ export default function Gallery() {
             />
           </section>
         ))}
-      <section className="container">
+      <section className="galleryContainer">
         {galleryData &&
           galleryData[1].map((el, index) => {
             let marginRight = "";
@@ -89,7 +89,7 @@ export default function Gallery() {
           })}
       </section>
       <div className="modal display-none" ref={modal}>
-        <p className="title"></p>
+        <h1></h1>
         <img alt="" />
         <button className="closeModal button" onClick={modalToggle}>
           Close

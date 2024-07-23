@@ -29,18 +29,18 @@ export default function Navbar() {
     setScrolling();
     if (window.scrollY > 160) {
       if (scrolling[1] > scrolling[0]) {
-        document.querySelector(".header-mob").style.transform =
+        document.querySelector(".header-menu").style.transform =
           "translateY(-100%)";
       } else {
-        document.querySelector(".header-mob").style.transform =
+        document.querySelector(".header-menu").style.transform =
           "translateY(0%)";
       }
     } else {
-      document.querySelector(".header-mob").style.transform = "translateY(0%)";
+      document.querySelector(".header-menu").style.transform = "translateY(0%)";
     }
   });
   const hamburgerFunc = function () {
-    if (menu.current) {
+    if (menu.current && window.innerWidth < 1150) {
       if (menu.current.classList.contains("display-none")) {
         menu.current.classList.remove("display-none");
         menu.current.classList.remove("slide-out");
@@ -94,7 +94,7 @@ export default function Navbar() {
       .catch(console.error);
   }, []);
   return (
-    <header>
+    <header className="page-header">
       <nav className="navbar dtop-only">
         <NavLink to="/">
           {logo &&
@@ -106,7 +106,7 @@ export default function Navbar() {
               />
             ))}
         </NavLink>
-        <menu className="navlinks" ref={dtopNav}>
+        <ul className="navlinks" ref={dtopNav}>
           <li>
             <NavLink
               to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
@@ -143,9 +143,9 @@ export default function Navbar() {
           <li>
             <NavLink to="/contact">CONTACT</NavLink>
           </li>
-        </menu>
+        </ul>
       </nav>
-      <div className="header-mob mob-only" ref={header}>
+      <div className="navbar mob-only" ref={header}>
         <NavLink to="/">
           {logo &&
             logo[0].map((el, index) => (
@@ -165,7 +165,7 @@ export default function Navbar() {
           <i className="fa-solid fa-bars"></i>
         </button>
       </div>
-      <section className="menu display-none slide-in" ref={menu}>
+      <div className="menu display-none slide-in" ref={menu}>
         <header className="header-menu">
           <button
             className="close-menu"
@@ -175,8 +175,8 @@ export default function Navbar() {
             <i className="fa-solid fa-x"></i>
           </button>
         </header>
-        <nav>
-          <menu className="menu-nav">
+        <nav className="menu-nav">
+          <ul className="menu-navlinks">
             <li>
               <NavLink to="/" exact="true" onClick={hamburgerFunc()}>
                 DONATE
@@ -254,9 +254,9 @@ export default function Navbar() {
                   <a href={"mailto:" + el.generalEmail}>{el.generalEmail}</a>
                 </li>
               ))}
-          </menu>
+          </ul>
         </nav>
-      </section>
+      </div>
     </header>
   );
 }

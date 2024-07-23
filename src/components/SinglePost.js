@@ -54,25 +54,27 @@ export default function SinglePost() {
       <img
         src={urlFor(singlePost.mainImage.asset).width(800).url()}
         alt=""
-        className="thumbnail"
+        className="banner"
       />
-      <h1 className="title">{singlePost.title}</h1>
-      <div className="block-content">
-        {singlePost.body.map((el, index) => (
-          <BlockContent
-            key={index}
-            blocks={el}
-            projectId={"8ab8bcjd"}
-            dataset={"production"}
-            imageOptions={{
-              w: Number(el.size) ? Number(el.size) : 375,
-            }}
-          />
-        ))}
+      <div className="text">
+        <h1>{singlePost.title}</h1>
+        <div className="block-content">
+          {singlePost.body.map((el, index) => (
+            <BlockContent
+              key={index}
+              blocks={el}
+              projectId={"8ab8bcjd"}
+              dataset={"production"}
+              imageOptions={{
+                w: Number(el.size) ? Number(el.size) : 375,
+              }}
+            />
+          ))}
+        </div>
+        <a href="/blog" className="navy">
+          <button className="button">BACK</button>
+        </a>
       </div>
-      <NavLink to="/blog" className="button">
-        BACK
-      </NavLink>
     </section>
   );
 }

@@ -1,0 +1,237 @@
+body {
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+  }
+
+  :root {
+    --clr-gold: #c8a25f;
+    --clr-darkgold: #997024;
+    --clr-beige: #d6b18b;
+    --clr-green: #7d9238;
+    --clr-darkgreen: #595e29;
+    --clr-navy: #2e4066;
+    --clr-lightblue: #bfdaec;
+    --clr-brown: #b06633;
+    --clr-black: #353535;
+    --clr-white: white;
+    --clr-input: #a0a7b7;
+
+    --margin: 7.5vw;
+    --spacer: 3vw;
+    --btn-br: 20px;
+
+    --fs-36: 3.6rem;
+    --fs-24: 2.4rem;
+    --fs-18: 1.8rem;
+    --fs-16: 1.6rem;
+    --fs-14: 1.4rem;
+    --fs-12: 1.2rem;
+    --fs-10: 1rem;
+
+    --slideDistance: calc((-1 * (100vw - (-2 * var(--spacer))) / 3));
+
+  }
+
+  * {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: var(--fs-36);
+    font-weight: 900;
+  }
+
+  p {
+    font-size: var(--fs-24);
+    font-weight: 300;
+    color: var(--clr-black);
+  }
+
+  footer {
+    li,
+    li * {
+      font-size: var(--fs-14);
+      color: var(--clr-white);
+    }
+  }
+
+  /* UTILITIES  */
+
+  .display-none {
+    display: none !important;
+  }
+  
+  @media only screen and (min-width: 1150px) {
+      .blocks > div[data-direction="imageRight"] {
+        flex-direction: row-reverse;
+      }
+    
+      .blocks > div[data-direction="imageLeft"] {
+        flex-direction: row;
+      }
+  }
+  
+  .section-split {
+    padding-inline: var(--margin);
+    display: flex;
+    align-items: center;
+    gap: var(--spacer);
+    overflow: hidden;
+  
+    h1 {
+      white-space: nowrap;
+    }
+  
+    hr {
+      transform: rotate(180deg);
+      width: 100%;
+      height: 0.4rem;
+      border: 0;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  
+  .bold {
+    font-weight: 800;
+  }
+  
+  .button {
+    text-align: center;
+    border-radius: var(--btn-br);
+    border: 1px solid transparent;
+    width: 10em;
+    aspect-ratio: 175/50;
+    font-size: var(--fs-16);
+    color: #ffffff;
+    font-weight: 900;
+    transition: 300ms;
+  }
+  
+  button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  
+  .gold .button, .gold hr {
+    background-color: var(--clr-gold);
+  }
+  
+  .gold h1 {
+    color: var(--clr-darkgold);
+  }
+  
+  .brown .button, .brown hr {
+    background-color: var(--clr-brown);
+  }
+  
+  .brown h1 {
+    color: var(--clr-brown);
+  }
+  
+  .green .button, .green hr {
+    background-color: var(--clr-green);
+  }
+  
+  .green h1 {
+    color: var(--clr-darkgreen);
+  }
+  
+  .navy h1 {
+    color: var(--clr-navy);
+  }
+  
+  .navy .button, .navy hr {
+    background-color: var(--clr-navy);
+  }
+  
+  .flex-row {
+    display: flex;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .s-between {
+    justify-content: space-between;
+  }
+  
+  .g-spacer {
+    gap: var(--spacer);
+  }
+
+      
+  @keyframes slide-in {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+      transform: translateX(0vw);
+
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      transform: translateX(0vw);
+    }
+
+    to {
+      transform: translateX(100vw);
+    }
+  }
+
+  .slide-in {
+    animation-name: slide-in;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+  }
+
+  .slide-out {
+    animation-name: slide-out;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+  }
+  
+  @media only screen and  (min-width: 1150px) {
+    .mob-only {
+      display: none !important;
+    }
+  }
+  
+  @media only screen and  (max-width: 1150px) {
+    .dtop-only {
+      display: none !important;
+    }
+  }  
+  
+  .banner {
+    width: 100%;
+    aspect-ratio: 1920/675;
+    position: relative;
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
