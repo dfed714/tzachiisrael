@@ -1,6 +1,5 @@
 import client from "../client";
 import React, { useState, useEffect, useRef } from "react";
-import imageUrlBuilder from "@sanity/image-url";
 
 export default function Gallery() {
   const [galleryData, setGalleryData] = useState(null);
@@ -89,7 +88,7 @@ export default function Gallery() {
           })}
       </section>
       <div className="modal display-none" ref={modal}>
-        <h1></h1>
+        <h1>_</h1>
         <img alt="" />
         <button className="closeModal button" onClick={modalToggle}>
           Close

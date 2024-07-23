@@ -1,12 +1,6 @@
 import client from "../client";
 import React, { useState, useEffect, useRef } from "react";
-import imageUrlBuilder from "@sanity/image-url";
 import { Link } from "react-router-dom";
-
-const builder = imageUrlBuilder(client);
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default function Home() {
   const [homeData, setHomeData] = useState(null);

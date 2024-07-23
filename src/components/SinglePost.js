@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import client from "../client";
-import { NavLink } from "react-router-dom";
 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
