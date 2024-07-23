@@ -94,7 +94,7 @@ export default function Footer() {
               </label>
               <div className="newsletter-input flex-row">
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   id="subscribe-input"
                   required

@@ -48,5 +48,38 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <form
+      name="Tzachi-Israel-Subscribe-Form"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="email" name="email" />
+    </form>
+
+    <script type="text/babel">
+      ReactDOM.render(
+        <form name="Tzachi-Israel-Subscribe-Form" method="POST">
+          <input
+            type="hidden"
+            name="form-name"
+            value="Tzachi-Israel-Subscribe-Form"
+          />
+          <label for="subscribe-input">
+            Subscribe to receive our newsletter
+          </label>
+          <div className="newsletter-input flex-row">
+            <input
+              type="email"
+              name="email"
+              id="subscribe-input"
+              required
+            ></input>
+            <button type="submit">SUBSCRIBE</button>
+          </div>
+        </form>,
+        document.getElementById("root")
+      );
+    </script>
   </body>
 </html>
