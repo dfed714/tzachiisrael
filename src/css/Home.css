@@ -58,11 +58,12 @@ section.home {
         justify-content: center;
         display: flex;
         flex-direction: column;
-        gap: 3.75rem;
+        gap: min(var(--spacer), 3.75rem);
   
         img {
           width: 100%;
           object-fit: contain;
+          max-width: 100%;;
         }
       }
     }
@@ -228,7 +229,7 @@ section.home {
           display: flex;
           flex-direction: column;
           text-align: left;
-          gap: 3.75rem;
+          gap: min(var(--spacer), 3.75rem);
   
           .title {
               font-size: var(--fs-36);
