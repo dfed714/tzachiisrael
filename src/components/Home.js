@@ -160,7 +160,7 @@ export default function Home() {
                   <div className={`text ${colors[index]}`}>
                     <h1>{el.title}</h1>
                     <p>{el.text}</p>
-                    <a href={el.buttonLink} target="_blank" rel="noreferrer">
+                    <a href={el.buttonLink}>
                       <button className="button">{el.button}</button>
                     </a>
                   </div>
