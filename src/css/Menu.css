@@ -36,6 +36,8 @@
       .menu-navlinks * {
         font-size: var(--fs-18);
         color: var(--clr-white);
+        letter-spacing: 0.05em;
+        font-weight: 600;
       }
 
       .menu-navlinks {

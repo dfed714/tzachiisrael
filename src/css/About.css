@@ -57,7 +57,7 @@
 
   @media only screen and (max-width: 1150px) {
     .aboutBlock {
-      flex-direction: column-reverse;
+      flex-direction: column;
       align-items: center;
       padding-inline: 0;
 

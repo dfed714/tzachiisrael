@@ -14,9 +14,10 @@ export default function Gallery() {
 
   const modal = useRef();
 
-  const modalToggle = (title, url) => {
+  const modalToggle = (title, description, url) => {
     [...modal.current.children][0].textContent = title;
-    [...modal.current.children][1].src = url;
+    [...modal.current.children][1].textContent = description;
+    [...modal.current.children][2].src = url;
     modal.current.classList.toggle("display-none");
   };
 
@@ -40,6 +41,7 @@ export default function Gallery() {
           }, 
           *[_type == 'galleryBlock'] {
             imageTitle,
+            imageDescription,
             galleryImage {
               asset->{
                 _id,
@@ -81,7 +83,11 @@ export default function Gallery() {
                 key={index}
                 alt={el.imageTitle}
                 onClick={() =>
-                  modalToggle(el.imageTitle, el.galleryImage.asset.url)
+                  modalToggle(
+                    el.imageTitle,
+                    el.imageDescription,
+                    el.galleryImage.asset.url
+                  )
                 }
               />
             );
@@ -89,6 +95,7 @@ export default function Gallery() {
       </section>
       <div className="modal display-none" ref={modal}>
         <h1>_</h1>
+        <p>_</p>
         <img alt="" />
         <button className="closeModal button" onClick={modalToggle}>
           Close

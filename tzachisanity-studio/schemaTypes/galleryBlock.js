@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'imageDescription',
+      title: 'Image Description',
+      type: 'string',
+    }),
+    defineField({
       name: 'galleryImage',
       title: 'Gallery image',
       type: 'image',
