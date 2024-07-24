@@ -5,17 +5,18 @@ section.home {
       align-items: center;
       justify-content: space-between;
       padding-inline: var(--margin);
-      gap: 7.5rem;
+      gap: var(--margin);
       .text {
         display: flex;
         flex-direction: column;
         gap: min(var(--spacer), 3.75rem);
         text-align: left;
         height: 100%;
+        width: 50%;
       }
       img {
         height: 50rem;
-        min-width: 50%;
+        width: 50%;
         object-fit: cover;
       }
 
@@ -34,7 +35,7 @@ section.home {
         }
 
         .text {
-          padding-inline: var(--margin);
+          width: calc(100% - (2 * var(--margin)));
         }
       }
     }
