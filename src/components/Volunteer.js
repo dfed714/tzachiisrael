@@ -60,10 +60,10 @@ export default function Volunteer() {
             </section>
           );
         })}
-      {volunteerData &&
-        volunteerData[1].map((el, index) => {
-          return (
-            <section className="blocks">
+      <section className="blocks">
+        {volunteerData &&
+          volunteerData[1].map((el, index) => {
+            return (
               <div className="volunteerBlock" key={index}>
                 <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
 
@@ -75,9 +75,9 @@ export default function Volunteer() {
                   </a>
                 </div>
               </div>
-            </section>
-          );
-        })}
+            );
+          })}
+      </section>
     </section>
   );
 }

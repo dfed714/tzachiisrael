@@ -1,7 +1,3 @@
-  .program {
-    padding-bottom: var(--margin);
-  }
-
   .programBlock {
     display: flex;
     height: 60rem;
@@ -24,14 +20,14 @@
         object-fit: cover;
       }
 
-      & {
-        padding-top: var(--margin);
+      &:not(:last-child) {
+        padding-bottom: var(--margin);
       }
   }
 
   @media only screen and (max-width: 1150px) {
     .programBlock {
-      flex-direction: column !important;
+      flex-direction: column-reverse !important;
         height: auto !important;
         padding-inline: 0;
 

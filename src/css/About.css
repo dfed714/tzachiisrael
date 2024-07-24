@@ -2,13 +2,16 @@
     width: 100%;
     box-sizing: border-box;
     padding-inline: var(--margin);
-    margin-block: var(--margin);
     display: flex;
     justify-content: flex-end;
     gap: var(--spacer);
     position: relative;
     overflow: hidden;
 
+
+    &:not(:first-child) {
+      padding-top: var(--margin);
+    }
     
     .text {
       display: flex;

@@ -1,7 +1,7 @@
 .volunteerBlock {
-    padding: var(--margin);
+    padding-inline: var(--margin);
     display: flex;
-    height: 60rem;
+    height: 100%;
       align-items: center;
       justify-content: space-between;
       padding-inline: var(--margin);

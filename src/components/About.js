@@ -67,14 +67,14 @@ export default function About() {
             <img src={el.mainImage.asset.url} alt={el.mainImage.asset.alt} />
           </section>
         ))}
-      {aboutData &&
-        aboutData[1]
-          .sort((a, b) => a.position - b.position)
-          .map((el, index) => {
-            let colors = ["gold", "green", "brown"];
-            return (
-              <section className={`blocks ${colors[index]}`}>
-                <div className="aboutBlock" key={index}>
+      <section className="blocks">
+        {aboutData &&
+          aboutData[1]
+            .sort((a, b) => a.position - b.position)
+            .map((el, index) => {
+              let colors = ["gold", "green", "brown"];
+              return (
+                <div className={`aboutBlock ${colors[index]}`} key={index}>
                   <img
                     src={el.blockImage.asset.url}
                     alt={el.blockImage.asset.alt}
@@ -85,9 +85,9 @@ export default function About() {
                     <p>{el.text}</p>
                   </div>
                 </div>
-              </section>
-            );
-          })}
+              );
+            })}
+      </section>
       <div className="section-split brown">
         <h1 className="title">OUR TEAM</h1>
         <hr />

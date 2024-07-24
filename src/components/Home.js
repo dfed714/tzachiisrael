@@ -141,18 +141,22 @@ export default function Home() {
             </div>
           </section>
         ))}
-      {homeData &&
-        homeData[2]
-          .sort((a, b) => a.position - b.position)
-          .map((el, index) => {
-            let blockDirection = "imageRight";
-            let colors = ["gold", "brown", "green"];
-            if (index % 2 === 0) {
-              blockDirection = "imageLeft";
-            }
-            return (
-              <section className="blocks" key={index}>
-                <div className="homeBlock" data-direction={blockDirection}>
+      <section className="blocks">
+        {homeData &&
+          homeData[2]
+            .sort((a, b) => a.position - b.position)
+            .map((el, index) => {
+              let blockDirection = "imageRight";
+              let colors = ["gold", "brown", "green"];
+              if (index % 2 === 0) {
+                blockDirection = "imageLeft";
+              }
+              return (
+                <div
+                  className="homeBlock"
+                  key={index}
+                  data-direction={blockDirection}
+                >
                   <div className={`text ${colors[index]}`}>
                     <h1>{el.title}</h1>
                     <p>{el.text}</p>
@@ -165,9 +169,9 @@ export default function Home() {
                     alt={el.blockImage.asset.url}
                   />
                 </div>
-              </section>
-            );
-          })}
+              );
+            })}
+      </section>
       <section className="slider navy">
         <div className="slider-images" ref={slider}>
           {homeData &&

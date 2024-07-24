@@ -5,7 +5,6 @@ section.home {
       align-items: center;
       justify-content: space-between;
       padding-inline: var(--margin);
-      padding-block: var(--margin);
       gap: 7.5rem;
       .text {
         display: flex;
@@ -18,6 +17,10 @@ section.home {
         height: 50rem;
         min-width: 50%;
         object-fit: cover;
+      }
+
+      &:not(:last-child) {
+        padding-bottom: var(--margin);
       }
     }
   
@@ -128,7 +131,8 @@ section.home {
       display: flex;
       box-sizing: border-box;
       gap: var(--spacer);
-      margin-block: var(--margin);
+      margin-top: calc(0.5 * var(--margin));
+      margin-bottom: var(--margin);
       width: 100%;
       padding-inline: var(--margin);
   

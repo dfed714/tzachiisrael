@@ -338,3 +338,11 @@ body {
       }
     }
   }
+
+  section:not(section.volunteer) .blocks {
+      min-height: calc(100svh - 15rem) !important;
+  }
+
+  .blocks {
+    margin-block: var(--margin);
+  }
