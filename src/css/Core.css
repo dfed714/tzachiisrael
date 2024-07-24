@@ -235,3 +235,106 @@ body {
       object-fit: cover;
     }
   }
+
+  @media only screen and (min-width: 1150px) {
+    .slider {
+    margin-block: var(--margin);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacer);
+    width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    transition: all 1s ease-in;
+  
+  
+  
+    a {
+      margin-inline: auto;
+    }
+  
+    .slider-images {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: hidden;
+      gap: calc(2 * var(--spacer));
+      transition: all 300ms ease-in;
+      height: 50rem;
+  
+  
+      .slider-image {
+        width: calc((100vw - (4 * var(--spacer))) / 3);
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        transition: all 300ms ease-in;
+        opacity: 0.5;
+  
+      }
+    }
+  
+    .active-height {
+      transform: scale(1.2);
+      background-position: center;
+      opacity: 1 !important;
+    }
+  
+    .prevSlide {
+      cursor: pointer;
+      position: absolute;
+      top: calc(50% - var(--spacer));
+      left: calc((475/1920) * 100vw);
+      width: calc((50/1920) * 100vw);
+      aspect-ratio: 1/1.5;
+      transform: translateY(-50%);
+    }
+  
+    .nextSlide {
+      cursor: pointer;
+      position: absolute;
+      top: calc(50% - var(--spacer));
+      right: calc((475/1920) * 100vw);
+      width: calc((50/1920) * 100vw);
+      aspect-ratio: 1/1.5;
+      transform: translateY(-50%) rotate(180deg);
+      
+    }
+    }
+  }
+  
+  @media only screen and (max-width: 1150px) {
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 50rem !important;
+      gap: var(--spacer);
+      margin-block: calc(4 * var(--spacer));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 500ms ease-in;
+      ;
+  
+      .slider-images {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      height: 100% !important;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 0;
+      scroll-behavior: smooth;
+      -webkit-scroll-color: black;
+  
+        .slider-image {
+          background-size: cover !important;
+          background-repeat: no-repeat;
+          scroll-snap-align: start;
+          min-width: 100% !important;
+        }
+      }
+    }
+  }

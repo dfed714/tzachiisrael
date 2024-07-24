@@ -95,7 +95,7 @@ export default function Navbar() {
         <ul className="navlinks" ref={dtopNav}>
           <li>
             <NavLink
-              to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+              to="https://secure.merchpay.com/tzachi-israel/"
               target="_blank"
               rel="noreferrer"
             >
@@ -116,15 +116,6 @@ export default function Navbar() {
           </li>
           <li>
             <NavLink to="/blog">BLOG</NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="https://tzachiisrael.myshopify.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              MERCH
-            </NavLink>
           </li>
           <li>
             <NavLink to="/contact">CONTACT</NavLink>
@@ -170,7 +161,7 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink
-                to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+                to="https://secure.merchpay.com/tzachi-israel/"
                 target="_blank"
                 rel="noreferrer"
                 onClick={hamburgerFunc}
@@ -201,11 +192,6 @@ export default function Navbar() {
             <li>
               <NavLink to="/blog" onClick={hamburgerFunc}>
                 BLOG
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/" onClick={hamburgerFunc}>
-                MERCH
               </NavLink>
             </li>
             <li>

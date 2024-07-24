@@ -34,22 +34,6 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'image2',
-      title: 'Image 2',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'image3',
-      title: 'Image 3',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',

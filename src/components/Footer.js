@@ -65,15 +65,6 @@ export default function Footer() {
               <li>
                 <NavLink to="/blog">BLOG</NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="https://tzachiisrael.myshopify.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  MERCH
-                </NavLink>
-              </li>
             </menu>
           </div>
           <div className="right">
@@ -104,7 +95,7 @@ export default function Footer() {
             </form>
             <div className="donate-mail">
               <NavLink
-                to="https://secure.usaepay.com/interface/epayform/BSqPfjIzmGEc14U4cZ8mP0n2YTmyrZg9"
+                to="https://secure.merchpay.com/tzachi-israel/"
                 target="_blank"
                 rel="noreferrer"
               >
