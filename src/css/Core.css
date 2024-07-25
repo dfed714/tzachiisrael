@@ -22,8 +22,8 @@ body {
     --clr-white: white;
     --clr-input: #a0a7b7;
 
-    --margin: min(7.5vw, 7.5rem);
-    --spacer: min(3vw, 3.75rem);
+    --margin: 7.5vw;
+    --spacer: 3.75rem;
     --btn-br: 20px;
 
     --fs-36: 3.6rem;
@@ -106,7 +106,7 @@ body {
     border-radius: var(--btn-br);
     border: 1px solid transparent;
     width: 10em;
-    aspect-ratio: 175/50;
+    height: 2.85em;
     font-size: var(--fs-16);
     color: #ffffff;
     font-weight: 900;

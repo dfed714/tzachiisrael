@@ -68,6 +68,7 @@
 
   .modal h1, .modal p {
       color: var(--clr-white);
+      text-align: center;
   }
 
   .modal button {

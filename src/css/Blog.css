@@ -86,4 +86,5 @@
         font-size: var(--fs-24);
         outline: none;
         line-height: 1.5em;
+        border-radius: 0px;
       }

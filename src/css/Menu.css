@@ -25,7 +25,7 @@
     border: none;
     background-color: var(--clr-navy);
     color: var(--clr-white);
-    font-size: var(--spacer);
+    font-size: 3.75rem;
   }
 
   .menu .menu-nav {
