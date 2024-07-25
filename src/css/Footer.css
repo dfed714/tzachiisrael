@@ -83,23 +83,23 @@
         align-items: center;
         justify-content: flex-start;
         gap: 1em;
+    }
 
-        button {
-            font-size: var(--fs-14);
-            height: 2em;
-            padding-inline: 3em;
-        }
+    .footer .content .top .right .donate-mail button {
+        font-size: var(--fs-14);
+        height: 2em;
+        padding-inline: 3em;
+    }
 
-        a { 
-            height: 2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .footer .content .top .right .donate-mail a { 
+        height: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        img {
-            height: 2em;
-        }
+    .footer .content .top .right .donate-mail img {
+        height: 2em;
     }
 
     .footer .content .bottom {
@@ -110,6 +110,7 @@
     .footer .content .bottom .left {
         max-width: 75%;
     }
+    
     .footer .content .bottom * {
         font-size: var(--fs-10);
     }
