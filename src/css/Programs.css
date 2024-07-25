@@ -4,7 +4,7 @@
       align-items: center;
       justify-content: space-between;
       padding-inline: var(--margin);
-      gap: 7.5rem;
+      gap: min(var(--margin), 7.5rem);
   }
 
   .programBlock .text {
@@ -29,7 +29,7 @@
 
   @media only screen and (max-width: 1150px) {
     .programBlock {
-      flex-direction: column-reverse !important;
+        flex-direction: column-reverse !important;
         height: auto !important;
         padding-inline: 0;
     }
@@ -41,7 +41,7 @@
 
     .programBlock .text {
       width: 100%;
-    padding-inline: var(--margin);
+      padding-inline: var(--margin);
     }
 
     .programBlock:not(:last-child) {

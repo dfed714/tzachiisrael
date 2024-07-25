@@ -62,9 +62,9 @@ export default function Gallery() {
         filterData(galleryData[0], "title", "Gallery").map((el, index) => (
           <section className={`banner navy`} key={index}>
             <img
-              src={el.mainImage.asset.url}
+              src={el?.mainImage?.asset?.url}
               className="bannerImage"
-              alt={el.alt}
+              alt={el?.alt}
             />
           </section>
         ))}
@@ -78,15 +78,15 @@ export default function Gallery() {
 
             return (
               <img
-                src={el.galleryImage.asset.url}
+                src={el?.galleryImage?.asset?.url}
                 className={`galleryImage ${marginRight}`}
                 key={index}
-                alt={el.imageTitle}
+                alt={el?.imageTitle}
                 onClick={() =>
                   modalToggle(
-                    el.imageTitle,
-                    el.imageDescription,
-                    el.galleryImage.asset.url
+                    el?.imageTitle,
+                    el?.imageDescription,
+                    el?.galleryImage?.asset?.url
                   )
                 }
               />

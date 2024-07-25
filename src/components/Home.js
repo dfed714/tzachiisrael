@@ -144,7 +144,7 @@ export default function Home() {
       <section className="blocks">
         {homeData &&
           homeData[2]
-            .sort((a, b) => a.position - b.position)
+            .sort((a, b) => a?.position - b?.position)
             .map((el, index) => {
               let blockDirection = "imageRight";
               let colors = ["gold", "brown", "green"];
@@ -158,15 +158,15 @@ export default function Home() {
                   data-direction={blockDirection}
                 >
                   <div className={`text ${colors[index]}`}>
-                    <h1>{el.title}</h1>
-                    <p>{el.text}</p>
-                    <a href={el.buttonLink}>
-                      <button className="button">{el.button}</button>
+                    <h1>{el?.title}</h1>
+                    <p>{el?.text}</p>
+                    <a href={el?.buttonLink}>
+                      <button className="button">{el?.button}</button>
                     </a>
                   </div>
                   <img
-                    src={el.blockImage.asset.url}
-                    alt={el.blockImage.asset.url}
+                    src={el?.blockImage?.asset?.url}
+                    alt={el?.blockImage?.asset?.url}
                   />
                 </div>
               );
@@ -178,7 +178,7 @@ export default function Home() {
             homeData[3].map((el, index) => {
               let slide = 1;
               let activeHeight = "";
-              let activeSlide = `url(${el.sliderImage.asset.url})`;
+              let activeSlide = `url(${el?.sliderImage?.asset?.url})`;
               if (index === slide) {
                 activeHeight = "active-height";
               }
@@ -218,13 +218,16 @@ export default function Home() {
           homeData[4].slice(0, 3).map((post, index) => (
             <div>
               <Link
-                to={"/post/" + post.slug.current}
-                key={post.slug.current}
+                to={"/post/" + post?.slug?.current}
+                key={post?.slug?.current}
                 className="thumbnail"
               >
-                <h1 className="title">{post.title}</h1>
-                <p className="snippet">{post.snippet}</p>
-                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+                <h1 className="title">{post?.title}</h1>
+                <p className="snippet">{post?.snippet}</p>
+                <Link
+                  to={"/post/" + post?.slug?.current}
+                  key={post?.slug?.current}
+                >
                   <button className="button navy">LEARN MORE</button>
                 </Link>
               </Link>

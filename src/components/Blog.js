@@ -49,10 +49,9 @@ export default function Blog() {
       )
       .then((data) => {
         data = data.sort(
-          (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+          (a, b) => new Date(b?.publishedAt) - new Date(a?.publishedAt)
         );
         setPost(data);
-        console.log(filterData(postData[1], "title", "Blog"));
       })
       .catch(console.error);
   }, []);
@@ -63,9 +62,9 @@ export default function Blog() {
         filterData(postData[1], "title", "Blog").map((el, index) => (
           <section className={`banner navy`} key={index}>
             <img
-              src={el.mainImage.asset.url}
+              src={el?.mainImage?.asset?.url}
               className="bannerImage"
-              alt={el.alt}
+              alt={el?.alt}
             />
           </section>
         ))}
@@ -73,17 +72,14 @@ export default function Blog() {
         {postData.length > 0 &&
           postData[0].map((post, index) => (
             <Link
-              to={"/post/" + post.slug.current}
-              key={post.slug.current}
+              to={"/post/" + post?.slug?.current}
+              key={post?.slug?.current}
               className="thumbnail"
             >
-              <img
-                src={urlFor(post.mainImage).width(200).url()}
-                alt={post.title}
-              />
+              <img src={urlFor(post?.mainImage).url()} alt={post?.title} />
               <div className="text">
-                <h1 className="title">{post.title}</h1>
-                <p className="snippet">{post.snippet}</p>
+                <h1 className="title">{post?.title}</h1>
+                <p className="snippet">{post?.snippet}</p>
               </div>
             </Link>
           ))}

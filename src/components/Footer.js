@@ -36,10 +36,10 @@ export default function Footer() {
         {footerData &&
           footerData[0].map((el, index) => (
             <img
-              src={el.footerLogoImage.asset.url}
+              src={el?.footerLogoImage?.asset?.url}
               className="footerLogoImage"
               key={index}
-              alt={el.footerLogoImage.alt}
+              alt={el?.footerLogoImage?.alt}
             />
           ))}
       </section>
@@ -103,7 +103,7 @@ export default function Footer() {
               </NavLink>
               {footerData &&
                 footerData[1].map((el, index) => (
-                  <a href={"mailto:" + el.generalEmail} key={index}>
+                  <a href={"mailto:" + el?.generalEmail} key={index}>
                     <img src="/images/mail.png" alt="mail link" />
                   </a>
                 ))}

@@ -65,13 +65,16 @@ export default function Volunteer() {
           volunteerData[1].map((el, index) => {
             return (
               <div className="volunteerBlock" key={index}>
-                <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
+                <img
+                  src={el?.blockImage?.asset?.url}
+                  alt={el?.blockImage?.alt}
+                />
 
                 <div className="text brown">
-                  <h1>{el.title}</h1>
-                  <p>{el.text}</p>
-                  <a href={el.buttonLink} target="_blank" rel="noreferrer">
-                    <button className="button">{el.button}</button>
+                  <h1>{el?.title}</h1>
+                  <p>{el?.text}</p>
+                  <a href={el?.buttonLink} target="_blank" rel="noreferrer">
+                    <button className="button">{el?.button}</button>
                   </a>
                 </div>
               </div>

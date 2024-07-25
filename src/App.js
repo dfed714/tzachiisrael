@@ -7,7 +7,6 @@ import Programs from "./components/Programs.js";
 import Volunteer from "./components/Volunteer.js";
 import Gallery from "./components/Gallery.js";
 import Contact from "./components/Contact.js";
-import Post from "./components/Post.js";
 import Blog from "./components/Blog.js";
 import SinglePost from "./components/SinglePost.js";
 import Footer from "./components/Footer.js";
@@ -34,7 +33,6 @@ function App() {
           <Route element={<About />} path="/about" />
           <Route element={<Programs />} path="/programs" />
           <Route element={<SinglePost />} path="/post/:slug" />
-          <Route element={<Post />} path="/post" />
           <Route element={<Volunteer />} path="/volunteer" />
           <Route element={<Gallery />} path="/gallery" />
           <Route element={<Contact />} path="/contact" />

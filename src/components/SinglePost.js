@@ -51,14 +51,14 @@ export default function SinglePost() {
   return (
     <section className="post-body">
       <img
-        src={urlFor(singlePost.mainImage.asset).width(800).url()}
+        src={urlFor(singlePost?.mainImage?.asset).url()}
         alt=""
         className="banner"
       />
       <div className="text">
         <h1>{singlePost.title}</h1>
         <div className="block-content">
-          {singlePost.body.map((el, index) => (
+          {singlePost?.body.map((el, index) => (
             <BlockContent
               key={index}
               blocks={el}

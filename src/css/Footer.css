@@ -69,14 +69,16 @@
         display: flex;
         flex-direction: column;
             gap: 0.25em;
-
-        input {
-             background-color: rgba(255, 255, 255, 0.5);
-             border: none;
-            font-size: var(--fs-14);
-            height: 2em;
-        }
     }
+
+    .footer .content .top .right form input {
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+       font-size: var(--fs-14);
+       border-radius: 0;
+       height: 2em;
+       flex-grow: 0.25;
+   }
 
     .footer .content .top .right .donate-mail {
         display: flex;
@@ -119,6 +121,9 @@
         font-size: var(--fs-14);
         height: 2em;
         object-fit: contain;
+    }
+    
+    .footer .content .bottom a:not(:first-child) img {
         margin-left: 0.5em;
     }
 
@@ -131,10 +136,10 @@
 
     .footer .footer-logo {
         width: 100%;
+    }
 
-        .footerLogoImage {
-            width: 50%;
-        }
+    .footer .footer-logo .footerLogoImage {
+        width: 50%;
     }
 
     .footer  .content {

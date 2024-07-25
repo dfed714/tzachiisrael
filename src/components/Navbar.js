@@ -16,14 +16,14 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   })();
 
-  let scrolling = [];
+  // let scrolling = [];
 
-  const setScrolling = function () {
-    scrolling.push(window.scrollY);
-    if (scrolling.length > 2) {
-      scrolling = scrolling.slice(scrolling.length - 2);
-    }
-  };
+  // const setScrolling = function () {
+  //   scrolling.push(window.scrollY);
+  //   if (scrolling.length > 2) {
+  //     scrolling = scrolling.slice(scrolling.length - 2);
+  //   }
+  // };
 
   const hamburgerFunc = function () {
     if (menu.current && window.innerWidth < 1150) {
@@ -86,9 +86,9 @@ export default function Navbar() {
           {logo &&
             logo[0].map((el, index) => (
               <img
-                src={el.tzachi_logo_image.asset.url}
+                src={el?.tzachi_logo_image?.asset?.url}
                 key={index}
-                alt={el.tzachi_logo_image.alt}
+                alt={el?.tzachi_logo_image?.alt}
               />
             ))}
         </NavLink>
@@ -127,9 +127,9 @@ export default function Navbar() {
           {logo &&
             logo[0].map((el, index) => (
               <img
-                src={el.tzachi_logo_image.asset.url}
+                src={el?.tzachi_logo_image?.asset?.url}
                 key={index}
-                alt={el.tzachi_logo_image.alt}
+                alt={el?.tzachi_logo_image?.alt}
               />
             ))}
         </NavLink>
@@ -233,7 +233,7 @@ export default function Navbar() {
             {logo &&
               logo[1].map((el, index) => (
                 <li key={index}>
-                  <a href={"mailto:" + el.generalEmail}>{el.generalEmail}</a>
+                  <a href={"mailto:" + el?.generalEmail}>{el?.generalEmail}</a>
                 </li>
               ))}
           </ul>

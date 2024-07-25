@@ -57,7 +57,7 @@ export default function Contact() {
         filterData(contactData[0], "title", "Contact").map((el, index) => {
           return (
             <section className="banner" key={index}>
-              <img src={el.mainImage.asset.url} alt={el.mainImage.alt} />
+              <img src={el?.mainImage?.asset?.url} alt={el?.mainImage?.alt} />
             </section>
           );
         })}
@@ -65,27 +65,27 @@ export default function Contact() {
         contactData[1].map((el, index) => {
           return (
             <section className="contactBlock gold" key={index}>
-              <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
+              <img src={el?.blockImage?.asset?.url} alt={el?.blockImage?.alt} />
               <div className="text">
                 <h1>CONTACT US</h1>
                 <div className="addresses">
                   <div>
                     <p>United States Office</p>
-                    <p>{el.usOffice}</p>
+                    <p>{el?.usOffice}</p>
                   </div>
                   <div>
                     <p>Israel Office</p>
-                    <p>{el.israelOffice}</p>
+                    <p>{el?.israelOffice}</p>
                   </div>
                 </div>
                 <div className="addresses">
                   <div>
                     <p>General Inquiries</p>
-                    <p>{el.generalEmail}</p>
+                    <p>{el?.generalEmail}</p>
                   </div>
                   <div>
                     <p>Specific Inquiries</p>
-                    <p>{el.specificEmail}</p>
+                    <p>{el?.specificEmail}</p>
                   </div>
                 </div>
                 <menu>

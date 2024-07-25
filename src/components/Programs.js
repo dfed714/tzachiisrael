@@ -50,13 +50,13 @@ export default function Programs() {
       {programData &&
         filterData(programData[0], "title", "Programs").map((el, index) => (
           <div className="banner" key={index}>
-            <img src={el.mainImage.asset.url} alt={el.mainImage.alt} />
+            <img src={el?.mainImage?.asset?.url} alt={el?.mainImage?.alt} />
           </div>
         ))}
       <div className="blocks">
         {programData &&
           programData[1]
-            .sort((a, b) => a.position - b.position)
+            .sort((a, b) => a?.position - b?.position)
             .map((el, index) => {
               let blockDirection = "imageRight";
               if (index % 2 === 0) {
@@ -70,10 +70,13 @@ export default function Programs() {
                   data-direction={blockDirection}
                 >
                   <div className="text">
-                    <h1>{el.title}</h1>
-                    <p className="paragraph">{el.text}</p>
+                    <h1>{el?.title}</h1>
+                    <p className="paragraph">{el?.text}</p>
                   </div>
-                  <img src={el.blockImage.asset.url} alt={el.blockImage.alt} />
+                  <img
+                    src={el?.blockImage?.asset?.url}
+                    alt={el?.blockImage?.alt}
+                  />
                 </div>
               );
             })}
