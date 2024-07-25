@@ -1,11 +1,11 @@
 .volunteerBlock {
     padding-inline: var(--margin);
     display: flex;
-    height: 100%;
-      align-items: center;
-      justify-content: space-between;
-      padding-inline: var(--margin);
-      gap: var(--margin);
+    height: 50rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--margin);
+    gap: var(--margin);
 }
 
 .volunteerBlock:not(:first-of-type) {
@@ -27,10 +27,6 @@
   min-width: 50%;
   max-width: 100%;
   object-fit: cover;
-}
-
-.volunteerBlock p {
-  color: var(--clr-brown);
 }
 
 @media only screen and (max-width: 1150px) {

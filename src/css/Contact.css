@@ -33,6 +33,7 @@
 
   .contactBlock .text .addresses  p:first-child {
     color: var(--clr-gold);
+    font-weight: 600;
   }
 
   .contactBlock .text .addresses p {

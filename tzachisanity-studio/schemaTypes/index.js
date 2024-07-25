@@ -12,6 +12,7 @@ import slogan from './slogan'
 import footerLogo from './footer_logo'
 import homeSlider from './homeSlider'
 import post from './post'
+import form from './form'
 import author from './author'
 
 export const schemaTypes = [
@@ -29,5 +30,6 @@ export const schemaTypes = [
   teamMembers,
   blockContent,
   post,
+  form,
   author,
 ]

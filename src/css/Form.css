@@ -1,0 +1,25 @@
+.form-body {
+    width: 100vw;
+    height: 150vh;
+    margin-bottom: var(--margin);
+}
+
+.formContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formContainer h1 {
+    width: 100%;
+    padding-block: var(--spacer);
+    text-align: center;
+}
+
+.formIFrame {
+    border: none;
+    width: 100%;
+    height: 100%;
+}

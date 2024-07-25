@@ -1,5 +1,6 @@
 import client from "../client";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Volunteer() {
   const [volunteerData, setVolunteerData] = useState(null);
@@ -43,6 +44,9 @@ export default function Volunteer() {
               alt
             }
           },
+          *[_type == 'form'] {
+          slug
+          },
       ]`
       )
       .then((volunteerData) => {
@@ -50,6 +54,20 @@ export default function Volunteer() {
       })
       .catch(console.error);
   }, []);
+
+  const getForm = (label) => {
+    console.log(volunteerData[2][0].slug.current);
+    return (
+      <Link
+        to={"/form/" + volunteerData[2][0].slug.current}
+        key={volunteerData[2][0].slug.current}
+        className="button"
+      >
+        <p>{label}</p>
+      </Link>
+    );
+  };
+
   return (
     <section className="volunteer">
       {volunteerData &&
@@ -72,10 +90,8 @@ export default function Volunteer() {
 
                 <div className="text brown">
                   <h1>{el?.title}</h1>
-                  <p>{el?.text}</p>
-                  <a href={el?.buttonLink} target="_blank" rel="noreferrer">
-                    <button className="button">{el?.button}</button>
-                  </a>
+                  <h2>{el?.text}</h2>
+                  {getForm(el?.button)}
                 </div>
               </div>
             );

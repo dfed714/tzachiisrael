@@ -9,6 +9,7 @@ import Gallery from "./components/Gallery.js";
 import Contact from "./components/Contact.js";
 import Blog from "./components/Blog.js";
 import SinglePost from "./components/SinglePost.js";
+import Form from "./components/Form.js";
 import Footer from "./components/Footer.js";
 import "./css/Core.css";
 import "./css/Footer.css";
@@ -22,6 +23,7 @@ import "./css/Programs.css";
 import "./css/Gallery.css";
 import "./css/Blog.css";
 import "./css/Post.css";
+import "./css/Form.css";
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
           <Route element={<About />} path="/about" />
           <Route element={<Programs />} path="/programs" />
           <Route element={<SinglePost />} path="/post/:slug" />
+          <Route element={<Form />} path="/form/:slug" />
           <Route element={<Volunteer />} path="/join" />
           <Route element={<Gallery />} path="/gallery" />
           <Route element={<Contact />} path="/contact" />

@@ -50,6 +50,11 @@ body {
     font-weight: 900;
   }
 
+  h2 {
+    font-size: var(--fs-24);
+    font-weight: 300;
+  }
+
   p {
     font-size: var(--fs-24);
     font-weight: 300;
@@ -111,6 +116,15 @@ body {
     color: #ffffff;
     font-weight: 900;
     transition: 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button p {
+    font-size: var(--fs-16) !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
   }
   
   button:hover {
@@ -131,6 +145,10 @@ body {
   }
   
   .brown h1 {
+    color: var(--clr-brown);
+  }
+
+  .brown h2 {
     color: var(--clr-brown);
   }
   
