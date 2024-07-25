@@ -7,58 +7,58 @@
     top: 0;
     left: 0;
     z-index: 999;
-
-    > header {
-      box-sizing: border-box;
-      padding-inline: var(--margin);
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100%;
-      font-size: var(--fs-16);
-      height: 7.5rem;
-      gap: var(--margin);
-    }
-
-    .close-menu {
-      border: none;
-      background-color: var(--clr-navy);
-      color: var(--clr-white);
-      font-size: 3.75rem;
-    }
-
-    .menu-nav {
-      width: 100%;
-      box-sizing: border-box;
-      text-align: center;
-
-      .menu-navlinks,
-      .menu-navlinks * {
-        font-size: var(--fs-18);
-        color: var(--clr-white);
-        letter-spacing: 0.05em;
-        font-weight: 600;
-      }
-
-      .menu-navlinks {
-        box-sizing: border-box;
-        height: calc(100svh - 7.5rem);
-        overflow: auto;
-      }
-      .menu-navlinks > li {
-        margin-bottom: 1em;
-      }
-
-      .menu-socials {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--spacer);
-      }
-
-      img {
-        width: 5rem;
-        object-fit: contain;
-      }
-    }
   }
+
+  .menu header {
+    box-sizing: border-box;
+    padding-inline: var(--margin);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    font-size: var(--fs-16);
+    height: 7.5rem;
+    gap: var(--margin);
+  }
+
+  .menu .close-menu {
+    border: none;
+    background-color: var(--clr-navy);
+    color: var(--clr-white);
+    font-size: 3.75rem;
+  }
+
+  .menu .menu-nav {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .menu .menu-nav .menu-navlinks,
+    .menu .menu-nav .menu-navlinks * {
+      font-size: var(--fs-18);
+      color: var(--clr-white);
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .menu .menu-nav .menu-navlinks {
+      box-sizing: border-box;
+      height: calc(100svh - 7.5rem);
+      overflow: auto;
+    }
+    .menu .menu-nav .menu-navlinks > li {
+      margin-bottom: 1em;
+    }
+
+    .menu .menu-nav .menu-socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacer);
+    }
+
+    .menu .menu-nav img {
+      width: 5rem;
+      object-fit: contain;
+    }

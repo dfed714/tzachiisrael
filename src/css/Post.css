@@ -1,20 +1,18 @@
-.post-body {
-    .text{
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacer);
-        padding: var(--margin);
+.post-body .text{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+    padding: var(--margin);
+}
 
-        .button {
-            margin-top: var(--spacer)
-        }
-        
-        h1 {
-            color: var(--clr-navy);
-        }
+.post-body .text .button {
+    margin-top: var(--spacer)
+}
 
-        img {
-            margin-inline: auto;
-        }
-    }
-}   
+.post-body .text h1 {
+    color: var(--clr-navy);
+}
+
+.post-body .text img {
+    margin-inline: auto;
+}

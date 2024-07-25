@@ -7,28 +7,26 @@
     gap: var(--spacer);
     position: relative;
     overflow: hidden;
+  }
 
+  .aboutBlock:not(:first-child) {
+    padding-top: var(--margin);
+  }
+  
+  .aboutBlock .text {
+    display: flex;
+    gap: min(var(--spacer), 3.75rem);
+    flex-direction: column;
+    width: calc(50% - var(--spacer));
+      padding-block: var(--spacer);
+  }
 
-    &:not(:first-child) {
-      padding-top: var(--margin);
-    }
-    
-    .text {
-      display: flex;
-      gap: min(var(--spacer), 3.75rem);
-      flex-direction: column;
-      width: calc(50% - var(--spacer));
-        padding-block: var(--spacer);
-    }
-
-
-    img {
-      width: calc(50% - var(--spacer) - var(--margin));
-      height: 100%;
-      left: var(--margin);
-      position: absolute;
-      object-fit: cover;
-    }
+  .aboutBlock img {
+    width: calc(50% - var(--spacer) - var(--margin));
+    height: 100%;
+    left: var(--margin);
+    position: absolute;
+    object-fit: cover;
   }
 
   .teamMembers {
@@ -38,24 +36,24 @@
     flex-wrap: wrap;
     gap: var(--spacer);
     padding: var(--margin);
+  }
 
-    .teamMember {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 30%;
-      min-width: 30rem;
+  .teamMembers .teamMember {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    min-width: 30rem;
+  }
 
-      img {
-        width: 70%;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 2rem;
-      }
-    }
+  .teamMembers .teamMember img {
+    width: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
   }
 
   @media only screen and (max-width: 1150px) {
@@ -63,16 +61,16 @@
       flex-direction: column;
       align-items: center;
       padding-inline: 0;
+    }
 
-      img {
-        width: 100%;
-        box-sizing: border-box;
-        position: relative;
-        left: 0;
-      }
+    .aboutBlock img {
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      left: 0;
+    }
 
-      .text {
-        width: calc(100% - (2 * var(--margin)));
-      }
+    .aboutBlock .text {
+      width: calc(100% - (2 * var(--margin)));
     }
   }

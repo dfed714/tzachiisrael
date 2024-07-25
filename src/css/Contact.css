@@ -1,67 +1,67 @@
-.contactBlock {
-        padding-inline: var(--margin);
+  .contactBlock {
+      padding-inline: var(--margin);
       margin-block: var(--margin);
       display: flex;
       justify-content: center;
       gap: var(--margin);
-  
-      img {
-        height: 75rem;
-        max-width: 50%;
-      }
-  
-      .text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1.5rem;
-        min-width: 50%;
-        flex-grow: 1;
-
-
-        h1 {
-            color: var(--clr-gold) !important;
-        }
-
-        .addresses {
-          display: flex;
-          gap: var(--spacer);
-        flex-wrap: wrap;
-        width: 100%;
-          
-          p:first-child {
-            color: var(--clr-gold);
-          }
-  
-          p {
-            color: var(--clr-black);
-          }
-        }
-  
-        menu {
-          display: flex;
-          justify-content: flex-start;
-          width: 100%;
-          a {
-            height: fit-content;
-            padding: 0;
-          }
-          a img {
-            height: 15rem;
-            margin: 0;
-          }
-        }
-      }
-
     }
+
+    .contactBlock img {
+      height: 75rem;
+      max-width: 50%;
+    }
+
+    .contactBlock .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+      min-width: 50%;
+      flex-grow: 1;
+    }
+
+    .contactBlock .text h1 {
+      color: var(--clr-gold) !important;
+  }
+
+  .contactBlock .text .addresses {
+    display: flex;
+    gap: var(--spacer);
+  flex-wrap: wrap;
+  width: 100%;
+  }
+
+  .contactBlock .text .addresses  p:first-child {
+    color: var(--clr-gold);
+  }
+
+  .contactBlock .text .addresses p {
+    color: var(--clr-black);
+  }
+
+  .contactBlock .text menu {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .contactBlock .text menu a {
+    height: fit-content;
+    padding: 0;
+  }
+  .contactBlock .text menu a img {
+    height: 15rem;
+    margin: 0;
+  }
+
     @media only screen and (max-width: 1150px) {
       .contactBlock {
           flex-direction: column-reverse;
+      }
 
-          img:not(a img) {
-            min-width: 100% !important;
-            object-fit: contain;
-            height: auto;
-          }
+      .contactBlock img:not(a img) {
+        min-width: 100% !important;
+        object-fit: contain;
+        height: auto;
       }
     }

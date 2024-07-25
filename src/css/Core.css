@@ -56,14 +56,6 @@ body {
     color: var(--clr-black);
   }
 
-  footer {
-    li,
-    li * {
-      font-size: var(--fs-14);
-      color: var(--clr-white);
-    }
-  }
-
   /* UTILITIES  */
 
   .display-none {
@@ -86,20 +78,20 @@ body {
     align-items: center;
     gap: var(--spacer);
     overflow: hidden;
-  
-    h1 {
-      white-space: nowrap;
-    }
-  
-    hr {
-      transform: rotate(180deg);
-      width: 100%;
-      height: 0.4rem;
-      border: 0;
-    }
+  }
+
+  .section-split h1 {
+    white-space: nowrap;
+  }
+
+  .section-split hr {
+    transform: rotate(180deg);
+    width: 100%;
+    height: 0.4rem;
+    border: 0;
   }
   
-  a {
+  .section-split a {
     text-decoration: none;
     color: inherit;
   }
@@ -225,15 +217,15 @@ body {
     width: 100%;
     aspect-ratio: 1920/675;
     position: relative;
+  }
 
-    > img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   @media only screen and (min-width: 1150px) {
@@ -247,14 +239,13 @@ body {
     overflow-x: hidden;
     position: relative;
     transition: all 1s ease-in;
-  
-  
-  
-    a {
+    }
+
+    .slider a {
       margin-inline: auto;
     }
   
-    .slider-images {
+    .slider .slider-images {
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -262,27 +253,27 @@ body {
       gap: calc(2 * var(--spacer));
       transition: all 300ms ease-in;
       height: 50rem;
-  
-  
-      .slider-image {
-        width: calc((100vw - (4 * var(--spacer))) / 3);
-        aspect-ratio: 1/1;
-        overflow: hidden;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        transition: all 300ms ease-in;
-        opacity: 0.5;
-  
-      }
+    }
+
+      
+    .slider .slider-images .slider-image {
+      width: calc((100vw - (4 * var(--spacer))) / 3);
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      transition: all 300ms ease-in;
+      opacity: 0.5;
+
     }
   
-    .active-height {
+    .slider .active-height {
       transform: scale(1.2);
       background-position: center;
       opacity: 1 !important;
     }
   
-    .prevSlide {
+    .slider .prevSlide {
       cursor: pointer;
       position: absolute;
       top: calc(50% - var(--spacer));
@@ -292,7 +283,7 @@ body {
       transform: translateY(-50%);
     }
   
-    .nextSlide {
+    .slider .nextSlide {
       cursor: pointer;
       position: absolute;
       top: calc(50% - var(--spacer));
@@ -300,8 +291,6 @@ body {
       width: calc((50/1920) * 100vw);
       aspect-ratio: 1/1.5;
       transform: translateY(-50%) rotate(180deg);
-      
-    }
     }
   }
   
@@ -316,9 +305,10 @@ body {
       flex-direction: column;
       align-items: center;
       transition: all 500ms ease-in;
-      ;
-  
-      .slider-images {
+    }
+
+      
+    .slider .slider-images {
       width: 100%;
       display: flex;
       justify-content: flex-start;
@@ -328,15 +318,14 @@ body {
       scroll-padding: 0;
       scroll-behavior: smooth;
       -webkit-scroll-color: black;
-  
-        .slider-image {
-          background-size: cover !important;
-          background-repeat: no-repeat;
-          scroll-snap-align: start;
-          min-width: 100% !important;
-        }
       }
-    }
+
+      .slider .slider-images .slider-image {
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        scroll-snap-align: start;
+        min-width: 100% !important;
+      }
   }
 
   section:not(section.volunteer) .blocks {
@@ -345,4 +334,28 @@ body {
 
   .blocks {
     margin-block: var(--margin);
+  }
+
+  @media only screen and (max-width: 1150px) {
+    :root {
+      --fs-36: 3.3rem;
+      --fs-24: 2.2rem;
+      --fs-18: 1.7rem;
+      --fs-16: 1.5rem;
+      --fs-14: 1.3rem;
+      --fs-12: 1.1rem;
+      --fs-10: 0.9rem;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    :root {
+      --fs-36: 3.1rem;
+      --fs-24: 2rem;
+      --fs-18: 1.6rem;
+      --fs-16: 1.4rem;
+      --fs-14: 1.2rem;
+      --fs-12: 1rem;
+      --fs-10: 0.8rem;
+    }
   }
