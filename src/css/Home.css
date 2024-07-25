@@ -9,7 +9,7 @@ section.home .homeBlock {
 section.home .homeBlock .text {
   display: flex;
   flex-direction: column;
-  gap: min(var(--spacer), 3.75rem);
+  gap: var(--spacer);
   text-align: left;
   height: 100%;
   width: 50%;
@@ -62,12 +62,12 @@ section.home .banner .bannerImage {
     width: 50%;
     box-sizing: border-box;
     height: 100%;
-    padding-inline: 3.75rem;
+    padding-inline: var(--spacer);
     align-items: flex-start;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: min(var(--spacer), 3.75rem);
+    gap: var(--spacer);
   }
 
   section.home .banner .text img {
@@ -144,7 +144,7 @@ section.home .blogPosts .thumbnail {
   flex-direction: column;
   flex-grow: 1;
   text-align: left;
-  gap: min(var(--spacer), 3.75rem);
+  gap: var(--spacer);
 }
 
 section.home .blogPosts .thumbnail .title {

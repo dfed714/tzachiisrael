@@ -15,7 +15,7 @@
   
   .aboutBlock .text {
     display: flex;
-    gap: min(var(--spacer), 3.75rem);
+    gap: var(--spacer);
     flex-direction: column;
     width: calc(50% - var(--spacer));
       padding-block: var(--spacer);

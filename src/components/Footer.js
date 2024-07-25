@@ -55,7 +55,7 @@ export default function Footer() {
                 <NavLink to="/programs">PROGRAMS</NavLink>
               </li>
               <li>
-                <NavLink to="/volunteer">VOLUNTEER</NavLink>
+                <NavLink to="/join">JOIN</NavLink>
               </li>
             </menu>
             <menu>
@@ -64,6 +64,9 @@ export default function Footer() {
               </li>
               <li>
                 <NavLink to="/blog">BLOG</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">CONTACT</NavLink>
               </li>
             </menu>
           </div>

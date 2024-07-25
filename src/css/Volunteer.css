@@ -5,7 +5,11 @@
       align-items: center;
       justify-content: space-between;
       padding-inline: var(--margin);
-      gap: 7.5rem;
+      gap: var(--margin);
+}
+
+.volunteerBlock:not(:first-of-type) {
+  margin-top: var(--margin);
 }
 
 .volunteerBlock .text {
@@ -45,5 +49,7 @@
 
     .volunteerBlock img {
       aspect-ratio: 1/1 !important;
+      width: calc(100% - var(--margin));
+      padding-inline: var(--margin);
     }
 }

@@ -22,8 +22,8 @@ body {
     --clr-white: white;
     --clr-input: #a0a7b7;
 
-    --margin: 7.5vw;
-    --spacer: 3vw;
+    --margin: min(7.5vw, 7.5rem);
+    --spacer: min(3vw, 3.75rem);
     --btn-br: 20px;
 
     --fs-36: 3.6rem;

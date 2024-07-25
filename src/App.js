@@ -33,7 +33,7 @@ function App() {
           <Route element={<About />} path="/about" />
           <Route element={<Programs />} path="/programs" />
           <Route element={<SinglePost />} path="/post/:slug" />
-          <Route element={<Volunteer />} path="/volunteer" />
+          <Route element={<Volunteer />} path="/join" />
           <Route element={<Gallery />} path="/gallery" />
           <Route element={<Contact />} path="/contact" />
           <Route element={<Blog />} path="/blog" />

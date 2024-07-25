@@ -109,7 +109,7 @@ export default function Navbar() {
             <NavLink to="/programs">PROGRAMS</NavLink>
           </li>
           <li>
-            <NavLink to="/volunteer">VOLUNTEER</NavLink>
+            <NavLink to="/join">JOIN</NavLink>
           </li>
           <li>
             <NavLink to="/gallery">GALLERY</NavLink>
@@ -180,8 +180,8 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/volunteer" onClick={hamburgerFunc}>
-                VOLUNTEER
+              <NavLink to="/join" onClick={hamburgerFunc}>
+                JOIN
               </NavLink>
             </li>
             <li>

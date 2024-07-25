@@ -4,7 +4,7 @@
       align-items: center;
       justify-content: space-between;
       padding-inline: var(--margin);
-      gap: min(var(--margin), 7.5rem);
+      gap: var(--margin);
   }
 
   .programBlock .text {
@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: min(var(--spacer), 3.75rem);
+    gap: var(--spacer);
     text-align: left;
     width: 50%;
     height: calc(100% - (2 * var(--spacer)));
