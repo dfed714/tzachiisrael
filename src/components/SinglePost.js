@@ -44,7 +44,9 @@ export default function SinglePost() {
   if (!singlePost)
     return (
       <section className="post-body">
-        <h1>Loading...</h1>
+        <div className="text">
+          <h1>Loading...</h1>
+        </div>
       </section>
     );
 

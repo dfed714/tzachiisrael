@@ -4,6 +4,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
         gap: var(--spacer);
+        min-height: 60rem;
       }
 
       section.blog .blogPosts h1 {
@@ -74,4 +75,15 @@
         section.blog .blogPosts .thumbnail {
           width: 100% !important;
         }
+      }
+
+      .searchBarInput {
+        width: calc(100% - (var(--margin) * 2));
+        margin-inline: var(--margin);
+        margin-top: var(--margin);
+        border: none;
+        border-bottom: 1px solid var(--clr-navy);
+        font-size: var(--fs-24);
+        outline: none;
+        line-height: 1.5em;
       }
