@@ -39,10 +39,10 @@ export default function Form() {
         form.map((el, index) => {
           return (
             <div className="formContainer" key={index}>
-              <h1>{el.title}</h1>
+              <h1>{el?.title}</h1>
               <iframe
                 src={
-                  el.formLink.slice(0, el.formLink.indexOf("viewform?")) +
+                  el?.formLink.slice(0, el?.formLink.indexOf("viewform?")) +
                   "viewform?embedded=true"
                 }
                 title="formIFrame"
