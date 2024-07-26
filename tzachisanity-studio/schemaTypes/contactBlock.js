@@ -21,11 +21,6 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'specificEmail',
-      title: 'Specific Email',
-      type: 'text',
-    }),
-    defineField({
       name: 'blockImage',
       title: 'Block image',
       type: 'image',

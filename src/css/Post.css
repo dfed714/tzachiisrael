@@ -5,6 +5,10 @@
     padding: var(--margin);
 }
 
+.post-body .text p:not(:last-child) {
+    margin-bottom: var(--spacer);
+}
+
 .post-body .text .button {
     margin-top: var(--spacer)
 }

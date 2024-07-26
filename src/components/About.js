@@ -43,6 +43,7 @@ export default function About() {
         *[_type == 'teamMembers'] {
           name, 
           role,
+          position,
           memberImage{
             asset->{
                 _id, 
@@ -54,6 +55,7 @@ export default function About() {
       ]`
       )
       .then((aboutData) => {
+        console.log(aboutData);
         setAboutData(aboutData);
       })
       .catch(console.error);

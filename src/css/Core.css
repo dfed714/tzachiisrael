@@ -229,6 +229,10 @@ body {
     .dtop-only {
       display: none !important;
     }
+
+    main {
+      padding-top: 7.5rem;
+    }
   }  
   
   .banner {
@@ -318,7 +322,7 @@ body {
       width: 100%;
       height: 50rem !important;
       gap: var(--spacer);
-      margin-block: calc(4 * var(--spacer));
+      margin-block: calc(2 * var(--margin));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -363,6 +367,7 @@ body {
       --fs-14: 1.3rem;
       --fs-12: 1.1rem;
       --fs-10: 0.9rem;
+      --spacer: 2rem;
     }
   }
 
@@ -375,5 +380,6 @@ body {
       --fs-14: 1.2rem;
       --fs-12: 1rem;
       --fs-10: 0.8rem;
+      --spacer: 2rem;
     }
   }

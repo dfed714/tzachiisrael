@@ -26,9 +26,9 @@
 
   .contactBlock .text .addresses {
     display: flex;
+    flex-direction: column;
     gap: var(--spacer);
-  flex-wrap: wrap;
-  width: 100%;
+    width: 100%;
   }
 
   .contactBlock .text .addresses  p:first-child {
@@ -44,6 +44,7 @@
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    height: fit-content;
   }
 
   .contactBlock .text menu a {
@@ -58,11 +59,17 @@
     @media only screen and (max-width: 1150px) {
       .contactBlock {
           flex-direction: column-reverse;
+          gap: var(--spacer);
       }
 
       .contactBlock img:not(a img) {
         min-width: 100% !important;
         object-fit: contain;
         height: auto;
+      }
+
+      .contactBlock .text menu a img {
+        height: 15rem;
+        margin: 0;
       }
     }

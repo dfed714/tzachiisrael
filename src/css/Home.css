@@ -71,7 +71,7 @@ section.home .banner .bannerImage {
   }
 
   section.home .banner .text img {
-    width: 100%;
+    width: 60%;
     height: auto;
     position: relative;
     object-fit: contain;
@@ -83,7 +83,7 @@ section.home .banner .bannerImage {
     align-items: flex-start;
   }
 
-  section.home .banner  .text {
+  section.home .banner .text {
     width: 100%;
     box-sizing: border-box;
     height: 50%;

@@ -77,18 +77,12 @@ export default function Contact() {
                     <p>Israel Office</p>
                     <p>{el?.israelOffice}</p>
                   </div>
-                </div>
-                <div className="addresses">
                   <div>
                     <p>General Inquiries</p>
                     <p>{el?.generalEmail}</p>
                   </div>
-                  <div>
-                    <p>Specific Inquiries</p>
-                    <p>{el?.specificEmail}</p>
-                  </div>
                 </div>
-                <menu>
+                <menu className="socials">
                   <NavLink
                     to="https://www.instagram.com/tzachi.israel/"
                     target="_blank"

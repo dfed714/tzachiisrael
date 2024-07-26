@@ -35,6 +35,16 @@
     font-size: var(--fs-16);
     height: 7.5rem;
     gap: var(--margin);
+    background-color: var(--clr-white);
+    padding-inline: var(--margin);
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition-property: transform;
+    transition-duration: 200ms;
   }
   
   .navbar.mob-only img {

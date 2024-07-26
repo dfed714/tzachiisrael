@@ -22,6 +22,10 @@ export default function Footer() {
           *[_type == 'contactBlock'] {
             generalEmail,
           },
+          *[_type == 'footerAddresses'] {
+            footerAddress1,
+            footerAddress2,
+          },
         ]`
       )
       .then((footerData) => {
@@ -115,16 +119,13 @@ export default function Footer() {
         </div>
         <div className="bottom">
           <div className="left">
-            <div className="addresses">
-              <p>
-                US OFFICE: TZACHIISRAELFUND 1150 S. Cedar Crest Blvd. Suite 200,
-                Allentown, PA 18103 | 501c3 99-0607155
-              </p>
-              <p>
-                Israel Office: TZACHIISRAEL HaZayit 13, Hashmonaim, Israel
-                7312700 | Seif 46 580783413
-              </p>
-            </div>
+            {footerData &&
+              footerData[2].map((el, index) => (
+                <div className="addresses" key={index}>
+                  <p>{el?.footerAddress1}</p>
+                  <p>{el?.footerAddress2}</p>
+                </div>
+              ))}
           </div>
           <div className="right">
             <menu>

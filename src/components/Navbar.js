@@ -9,21 +9,36 @@ export default function Navbar() {
   const menu = useRef(null);
   const hamburger = useRef(null);
   const closeMenu = useRef(null);
-  const header = useRef(null);
   const dtopNav = useRef(null);
+  const mobNav = useRef(null);
 
   (function scrollUp() {
     window.scrollTo(0, 0);
   })();
 
-  // let scrolling = [];
+  let scrolling = [];
 
-  // const setScrolling = function () {
-  //   scrolling.push(window.scrollY);
-  //   if (scrolling.length > 2) {
-  //     scrolling = scrolling.slice(scrolling.length - 2);
-  //   }
-  // };
+  const setScrolling = function () {
+    scrolling.push(window.scrollY);
+    if (scrolling.length > 2) {
+      scrolling = scrolling.slice(scrolling.length - 2);
+    }
+  };
+
+  if (mobNav.current) {
+    window.addEventListener("scroll", function () {
+      setScrolling();
+      if (window.scrollY > 75) {
+        if (scrolling[1] > scrolling[0]) {
+          mobNav.current.style.transform = "translateY(-7.5rem)";
+        } else {
+          mobNav.current.style.transform = "translateY(0)";
+        }
+      } else {
+        mobNav.current.style.transform = "translateY(0)";
+      }
+    });
+  }
 
   const hamburgerFunc = function () {
     if (menu.current && window.innerWidth < 1150) {
@@ -47,10 +62,23 @@ export default function Navbar() {
     if (dtopNav.current) {
       [...dtopNav.current.children].forEach((link) => {
         link.classList.remove("bold");
+        console.log(window.location.pathname);
         if (
           link.textContent === window.location.pathname.slice(1).toUpperCase()
-        )
+        ) {
           link.classList.add("bold");
+        }
+        if (
+          window.location.pathname.includes("/form/") &&
+          link.textContent === "JOIN"
+        ) {
+          link.classList.add("bold");
+        } else if (
+          window.location.pathname.includes("/post/") &&
+          link.textContent === "BLOG"
+        ) {
+          link.classList.add("bold");
+        }
       });
     }
   }, [location]);
@@ -122,7 +150,7 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-      <div className="navbar mob-only" ref={header}>
+      <div className="navbar mob-only" ref={mobNav}>
         <NavLink to="/">
           {logo &&
             logo[0].map((el, index) => (

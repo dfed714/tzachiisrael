@@ -4,7 +4,7 @@
     padding-inline: var(--margin);
     display: flex;
     justify-content: flex-end;
-    gap: var(--spacer);
+    gap: var(--margin);
     position: relative;
     overflow: hidden;
   }
@@ -18,7 +18,7 @@
     gap: var(--spacer);
     flex-direction: column;
     width: calc(50% - var(--spacer));
-      padding-block: var(--spacer);
+    padding-block: var(--spacer);
   }
 
   .aboutBlock img {

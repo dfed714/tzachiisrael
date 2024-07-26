@@ -14,6 +14,7 @@ import homeSlider from './homeSlider'
 import post from './post'
 import form from './form'
 import author from './author'
+import footerAddresses from './footer_addresses'
 
 export const schemaTypes = [
   tzachi_logo,
@@ -32,4 +33,5 @@ export const schemaTypes = [
   post,
   form,
   author,
+  footerAddresses,
 ]
