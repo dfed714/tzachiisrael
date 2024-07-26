@@ -55,7 +55,6 @@ export default function About() {
       ]`
       )
       .then((aboutData) => {
-        console.log(aboutData);
         setAboutData(aboutData);
       })
       .catch(console.error);

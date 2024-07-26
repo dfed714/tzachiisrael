@@ -62,7 +62,6 @@ export default function Navbar() {
     if (dtopNav.current) {
       [...dtopNav.current.children].forEach((link) => {
         link.classList.remove("bold");
-        console.log(window.location.pathname);
         if (
           link.textContent === window.location.pathname.slice(1).toUpperCase()
         ) {

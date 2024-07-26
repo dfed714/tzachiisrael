@@ -224,12 +224,7 @@ export default function Home() {
               >
                 <h1 className="title">{post?.title}</h1>
                 <p className="snippet">{post?.snippet}</p>
-                <Link
-                  to={"/post/" + post?.slug?.current}
-                  key={post?.slug?.current}
-                >
-                  <button className="button navy">LEARN MORE</button>
-                </Link>
+                <button className="button navy">LEARN MORE</button>
               </Link>
             </div>
           ))}

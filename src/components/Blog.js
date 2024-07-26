@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import client from "../client";
-import imageUrlBuilder from "@sanity/image-url";
 import { Link } from "react-router-dom";
-
-const builder = imageUrlBuilder(client);
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default function Blog() {
   const [postData, setPost] = useState([]);
@@ -94,7 +88,7 @@ export default function Blog() {
                 key={post?.slug?.current}
                 className="thumbnail"
               >
-                <img src={urlFor(post?.mainImage).url()} alt={post?.title} />
+                <img src={post?.mainImage?.asset?.url} alt={post?.title} />
                 <div className="text">
                   <h1 className="title">{post?.title}</h1>
                   <p className="snippet">{post?.snippet}</p>

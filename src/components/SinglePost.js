@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import client from "../client";
-
-const builder = imageUrlBuilder(client);
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default function SinglePost() {
   (function scrollUp() {
@@ -52,11 +46,7 @@ export default function SinglePost() {
 
   return (
     <section className="post-body">
-      <img
-        src={urlFor(singlePost?.mainImage?.asset).url()}
-        alt=""
-        className="banner"
-      />
+      <img src={singlePost?.mainImage?.asset?.url} alt="" className="banner" />
       <div className="text">
         <h1>{singlePost.title}</h1>
         <div className="block-content">
