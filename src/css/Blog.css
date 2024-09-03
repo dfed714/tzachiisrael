@@ -34,16 +34,30 @@
 
     section.blog .blogPosts .text h1 {
       width: 100%;
+      min-width: 100%;
+      max-width: 50rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    @media only screen and (max-width: 1900px) {
+      section.blog .blogPosts .text h1 {
+        max-width: 40rem;
+      }
+    }
+
+    @media only screen and (max-width: 1700px) {
+      section.blog .blogPosts .text h1 {
+        max-width: 30rem;
+      }
     }
 
     section.blog .blogPosts .text p {
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 6; /* Number of lines */
+      -webkit-line-clamp: 3; /* Number of lines */
       -webkit-box-orient: vertical;
     }
 

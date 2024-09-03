@@ -151,6 +151,11 @@ section.home .blogPosts .thumbnail .title {
   font-size: var(--fs-36);
   color: var(--clr-navy);
   font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines */
+  -webkit-box-orient: vertical;
 }
 
 section.home .blogPosts .thumbnail .snippet {
@@ -159,7 +164,7 @@ section.home .blogPosts .thumbnail .snippet {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 6; /* Number of lines */
+  -webkit-line-clamp: 3; /* Number of lines */
   -webkit-box-orient: vertical;
 } 
 
@@ -167,6 +172,12 @@ section.home .blogPosts .thumbnail .snippet {
 section.home .blogPosts .thumbnail .button {
   background-color: var(--clr-lightblue);
   color: var(--clr-navy);
+}
+
+@media only screen and (min-width: 1151px) {
+  section.home .blogPosts .thumbnail {
+    max-width: 30vw;
+  }
 }
 
 @media only screen and (max-width: 1150px) {
